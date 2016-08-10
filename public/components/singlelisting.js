@@ -14,46 +14,46 @@ class SingleListing extends React.Component {
         <div className="houseInfo">
 
   				<span className='houseName'>
-            <b>{this.props.listing.house_name}</b>
+            <b>{ this.props.listing.house_name }</b>
           </span><br/>
 
-          <i>{this.props.listing.heading}</i><br/><br/>
+          <i>{ this.props.listing.heading }</i><br/><br/>
 
           <b><i>Location:</i></b><br/>
-          {this.props.listing ? this.props.listing.street_add : null}<br/>
-          {this.props.listing ? this.props.listing.city : null},{this.props.listing ? this.props.listing.state : null} {this.props.listing ? this.props.listing.zipcode : null}<br/><br/>
+          { this.props.listing ? this.props.listing.street_add : null }<br/>
+          { this.props.listing ? this.props.listing.city : null },{ this.props.listing ? this.props.listing.state : null } { this.props.listing ? this.props.listing.zipcode : null }<br/><br/>
 
-          <b><i>Price:</i></b> ${this.props.listing ? this.props.listing.price : null} per night<br /><br/>
+          <b><i>Price:</i></b> ${ this.props.listing ? this.props.listing.price : null } per night<br /><br/>
 
-          <b><i>Vacancies:</i></b> {this.props.listing ? this.props.listing.vacancies : null} <br /><br />
+          <b><i>Vacancies:</i></b> { this.props.listing ? this.props.listing.vacancies : null } <br /><br />
 
-          <b><i>Dates Available:</i></b> {this.props.listing ? this.props.listing.dates_avail : null} <br /><br />
+          <b><i>Dates Available:</i></b> { this.props.listing ? this.props.listing.dates_avail : null } <br /><br />
 
-          <b><i>House Interests:</i></b> {this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={i} >{interest}, </span>) :  null}<br /><br />
+          <b><i>House Interests:</i></b> { this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) :  null }<br /><br />
 
-          <b><i>House Mission:</i></b> {this.props.listing ? this.props.listing.house_mission : null} <br /><br />
+          <b><i>House Mission:</i></b> { this.props.listing ? this.props.listing.house_mission : null } <br /><br />
 
-          <b><i>House Rules:</i></b> {this.props.listing ? this.props.listing.house_rules : null} <br /><br />
+          <b><i>House Rules:</i></b> { this.props.listing ? this.props.listing.house_rules : null } <br /><br />
 
-          <b><i>Amenities:</i></b> {this.props.listing ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={i} >{amenity}, </span>) :  null} <br /><br />
+          <b><i>Amenities:</i></b> { this.props.listing ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) :  null } <br /><br />
 
-          <b><i>Primary Member:</i></b> {this.props.listing ? this.props.listing.primary_member : null} <br /><br />
+          <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : null } <br /><br />
 
           <form>
             <h4 className="contactHouse">
-              <b>Contact {this.props.listing ? this.props.listing.house_name : 'Hacker House'}:</b>
+              <b>Contact { this.props.listing ? this.props.listing.house_name : 'Hacker House' }:</b>
             </h4>
             <label>Your Message:</label>
             <br />
             <textarea 
-              style={{width: '100%'}}
-              ref={(message) => this.message = message}>
+              style={ {width: '100%'} }
+              ref={ (message) => this.message = message }>
             </textarea>
             <br/>
             <input 
               name='message' 
               type='submit' 
-              onClick={this.onSendMessage.bind(this)} 
+              onClick={ this.onSendMessage.bind(this) } 
               value='Send'/>
           </form>
 

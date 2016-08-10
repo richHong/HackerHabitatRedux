@@ -20,7 +20,9 @@ export default class singleProfile extends Component {
         <div className='profileContainer'>
 
           <div className='avatarContainer'>
-            <img className='avatar' src={ this.state.avatar || 'https://cdn4.iconfinder.com/data/icons/linecon/512/photo-512.png' } />
+            <img 
+              className='avatar' 
+              src={ this.state.avatar || 'https://cdn4.iconfinder.com/data/icons/linecon/512/photo-512.png' } />
           </div>
 
           <div className='infoContainer'>
