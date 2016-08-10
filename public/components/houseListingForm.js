@@ -276,7 +276,7 @@ class HousingForm extends React.Component {
                 type='file' 
                 name='file' 
                 className='fileUpload'
-                ref={input => this.pic1 = input} />
+                ref={ input => this.pic1 = input } />
             </form>
 
             <form id='pic2Form'>
@@ -286,7 +286,7 @@ class HousingForm extends React.Component {
                 type='file' 
                 name='file' 
                 className='fileUpload'
-                ref={i nput => this.pic2 = input } />
+                ref={ input => this.pic2 = input } />
             </form>
 
             <form id='pic3Form'>
