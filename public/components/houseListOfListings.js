@@ -12,10 +12,12 @@ class HouseList extends React.Component {
     <div className='list'>
       <div className='listHeading'><b>{ this.props.page === 'profile' ? 'Your Hacker Houses' : ' Search Results'}</b></div>
       {Array.isArray(this.props.houses) ? this.props.houses.map((house, i) => {
-        return <HouseListing house={house} key={i} />
+        return <HouseListing 
+                  house={ house } 
+                  key={ i } />
       }) : null}
     </div>
     )
   }
 }
-export default HouseList
+export default HouseList;

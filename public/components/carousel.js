@@ -1,6 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component}                        from 'react';
 import {Carousel, CarouselItem, CarouselCaption} from 'react-bootstrap';
-import { connect } from 'react-redux';
+import { connect }                               from 'react-redux';
 
 class MyCarousel extends React.Component {
   constructor(props){
@@ -37,21 +37,23 @@ class MyCarousel extends React.Component {
       <Carousel>
         {this.state.images.map((img, i) => {
           return (
-          <CarouselItem key ={i}>
-            <img className='carouselImage' height={500} width={700} src={img} />
+          <CarouselItem 
+            key ={ i }>
+            <img 
+              className='carouselImage' 
+              height={ 500 } 
+              width={ 700 } 
+              src={ img } />
           </CarouselItem>
           )
         })}
       </Carousel>
-
-
     )
   }
 };
 function mapStateToProps(state) {
   return {
     listing: state.listings.singleListing
-  }
-}
-
-export default connect(mapStateToProps)(MyCarousel)
+  };
+};
+export default connect(mapStateToProps)(MyCarousel);

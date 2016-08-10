@@ -5,7 +5,7 @@ export default class CreateHouse extends Component {
   render() {
     return (
       <div className='form-style-6'>
-        <HouseListingForm/>
+        <HouseListingForm />
       </div>
     )
   }

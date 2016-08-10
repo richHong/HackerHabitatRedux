@@ -5,7 +5,7 @@ export default class SignIn extends Component {
   render() {
     return (
       <div className='signInForm'>
-        <SignInForm/>
+        <SignInForm />
       </div>
     )
   }

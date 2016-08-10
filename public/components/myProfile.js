@@ -13,13 +13,15 @@ export default class MyProfile extends Component {
     fetch('http://localhost:3001/v1/listings/?user_id='+userID)
     .then(response => response.json())
     .then(json => {
-      this.setState({favorites: json.data});
+      this.setState({ favorites: json.data });
     });
   }
   render() {
     return (
       <div>
-        <HouseListOfListings houses={this.state.favorites} page='profile'/>
+        <HouseListOfListings 
+          houses={this.state.favorites} 
+          page='profile'/>
         <SingleProfile />
       </div>
     )

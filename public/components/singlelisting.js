@@ -40,29 +40,40 @@ class SingleListing extends React.Component {
           <b><i>Primary Member:</i></b> {this.props.listing ? this.props.listing.primary_member : null} <br /><br />
 
           <form>
-            <h4 className="contactHouse"><b>Contact {this.props.listing ? this.props.listing.house_name : 'Hacker House'}:</b></h4>
-            <label>Your Message:</label><br />
-            <textarea style={{width: '100%'}}ref={(message) => this.message = message}></textarea><br/>
-            <input name='message' type='submit' onClick={this.onSendMessage.bind(this)} value='Send'/>
+            <h4 className="contactHouse">
+              <b>Contact {this.props.listing ? this.props.listing.house_name : 'Hacker House'}:</b>
+            </h4>
+            <label>Your Message:</label>
+            <br />
+            <textarea 
+              style={{width: '100%'}}
+              ref={(message) => this.message = message}>
+            </textarea>
+            <br/>
+            <input 
+              name='message' 
+              type='submit' 
+              onClick={this.onSendMessage.bind(this)} 
+              value='Send'/>
           </form>
 
         </div>
 
         <SingleGMaps />
 
-
-
 			</div>
 	}
 
     onSendMessage(e){
       e.preventDefault();
-      var sender;
-      var receiver;
-      var username;
-      var listing = "no name"
-      var message = this.message.value
+
+      let sender;
+      let receiver;
+      let username;
+      let listing = "no name"
+      let message = this.message.value
       let userID = window.localStorage.getItem('userID');
+
       fetch('http://localhost:3001/v1/users/?id=' + userID)
       .then(response => response.json())
       .then(json => {
@@ -92,7 +103,6 @@ class SingleListing extends React.Component {
     })
   }
 }
-
 
 function mapStateToProps(state) {
   return {

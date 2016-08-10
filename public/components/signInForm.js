@@ -33,11 +33,25 @@ class SignInForm extends React.Component {
 
   render(){
     return (
-      <form className='form-style-6' onSubmit={e => this.handleSubmit(e, this.username, this.password)}>
+      <form 
+        className='form-style-6' 
+        onSubmit={e => this.handleSubmit(e, this.username, this.password)}>
+
         <h1>USER LOGIN</h1>
-        <label>Username: </label><input type='text'ref={(username) => this.username = username} /><br/>
-        <label>Password: </label><input type='password' pattern=".{5,}" ref={(password) => this.password = password} /><br/>
-        <input type="submit" value="Sign In"/>
+        <label>Username: </label>
+        <input 
+            type='text'
+            ref={(username) => this.username = username} />
+        <br/>
+        <label>Password: </label>
+        <input 
+            type='password' 
+            pattern=".{5,}" 
+            ref={(password) => this.password = password} /><br/>
+        <input 
+            type="submit" 
+            value="Sign In"/>
+            
       </form>
       )
   }

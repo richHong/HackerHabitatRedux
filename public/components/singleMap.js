@@ -22,33 +22,33 @@ class SingleGMaps extends React.Component {
   render(){
     return (
       <Gmaps
-        width={'60%'}
-        height={'100vh'}
-        lat={this.props.listing ? this.props.listing.lat : 37.8780068}
-        lng={this.props.listing ? this.props.listing.lng : -122.2695097}
-        zoom={16}
-        loadingMessage={'Be happy'}
-        params={{v: '3.exp', key: 'AIzaSyAMUWIppT-jbjMztrR6tWSV7Y58jTZi2Sw'}}
-        onMapCreated={this.onMapCreated}>
-        {this.props.listing ?
+        width={ '60%' }
+        height={ '100vh' }
+        lat={ this.props.listing ? this.props.listing.lat : 37.8780068 }
+        lng={ this.props.listing ? this.props.listing.lng : -122.2695097 }
+        zoom={ 16 }
+        loadingMessage={ 'Loading' }
+        params={ {v: '3.exp', key: 'AIzaSyAMUWIppT-jbjMztrR6tWSV7Y58jTZi2Sw'} }
+        onMapCreated={ this.onMapCreated }>
+        { this.props.listing ?
           <Marker
-            lat={this.props.listing.lat}
-            lng={this.props.listing.lng} />
+            lat={ this.props.listing.lat }
+            lng={ this.props.listing.lng } />
          : null}
-        {this.props.listing ?
+        { this.props.listing ?
           <InfoWindow
-            lat={this.props.listing.lat}
-            lng={this.props.listing.lng}
-            content={this.props.listing.house_name} />
-            : null}
+            lat={ this.props.listing.lat }
+            lng={ this.props.listing.lng }
+            content={ this.props.listing.house_name } />
+            : null }
       </Gmaps>
       );
   }
 }
 function mapStateToProps(state) {
-    return {
-      listing: state.listings.singleListing
-    }
+  return {
+    listing: state.listings.singleListing
   }
+};
 
-export default connect(mapStateToProps)(SingleGMaps)
+export default connect(mapStateToProps)(SingleGMaps);

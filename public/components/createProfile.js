@@ -5,7 +5,7 @@ export default class CreateProfile extends Component {
   render() {
     return (
       <div className='form-style-6'> 
-        <ProfileForm/>
+        <ProfileForm />
       </div>
     )
   }
