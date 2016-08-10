@@ -1,6 +1,6 @@
-import React from 'react';
+import React                                          from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
-import Axios from 'axios';
+import Axios                                          from 'axios';
 
 function ifNotEmptyChangeTo(currentValue, previousValue){
   return currentValue !== "" ? currentValue : previousValue;

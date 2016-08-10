@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
-import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
+import React                                                                from 'react';
+import ReactDOM                                                             from 'react-dom';
+import { connect }                                                          from 'react-redux';
+import { Gmaps, Marker, InfoWindow, Circle }                                from 'react-gmaps';
 import { createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
-import { Router, Route, hashHistory, browserHistory } from 'react-router';
-import { singleListingAction } from '../actions/houseActions';
+import { Router, Route, hashHistory, browserHistory }                       from 'react-router';
+import { singleListingAction }                                              from '../actions/houseActions';
 
 class GMaps extends React.Component {
   constructor(props){

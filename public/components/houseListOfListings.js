@@ -1,6 +1,6 @@
-import React from 'react';
+import React        from 'react';
 import HouseListing from './houseListing';
-import { Link } from 'react-router';
+import { Link }     from 'react-router';
 
 class HouseList extends React.Component {
   constructor(props){

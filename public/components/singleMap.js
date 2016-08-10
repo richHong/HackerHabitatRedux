@@ -1,6 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { connect } from 'react-redux';
+import React                                 from 'react';
+import ReactDOM                              from 'react-dom';
+import { connect }                           from 'react-redux';
 import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 
 class SingleGMaps extends React.Component {

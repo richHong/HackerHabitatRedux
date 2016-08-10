@@ -1,7 +1,7 @@
-import React from 'react';
+import React       from 'react';
 import { connect } from 'react-redux';
 import SingleGMaps from './singleMap';
-import MyCarousel from './carousel';
+import MyCarousel  from './carousel';
 
 
 class SingleListing extends React.Component {

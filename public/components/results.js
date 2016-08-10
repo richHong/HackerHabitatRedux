@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import HouseListOfListings from './houseListOfListings';
-import HouseListing from './houseListing';
-import GMaps from './map';
+import { connect }          from 'react-redux';
+import HouseListOfListings  from './houseListOfListings';
+import HouseListing         from './houseListing';
+import GMaps                from './map';
 
 class Results extends Component {
  render(){

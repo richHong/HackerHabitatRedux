@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TitaniumPinewood/titanpine.git"
+    "url": "git+https://github.com/richHong/HackerHabitatRedux.git"
   },
   "engines": {
     "node": "5.10.0",
     "npm": "3.9.3"
   },
-  "author": "TitaniumPinewood",
+  "author": "Richard Hong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TitaniumPinewood/titanpine/issues"
+    "url": "https://github.com/richHong/HackerHabitatRedux/issues"
   },
-  "homepage": "https://github.com/TitaniumPinewood/titanpine#readme",
+  "homepage": "https://github.com/richHong/HackerHabitatRedux#readme",
   "dependencies": {
     "axios": "^0.11.1",
     "babel-core": "^6.3.15",

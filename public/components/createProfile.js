@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProfileForm from './profileForm';
+import ProfileForm          from './profileForm';
 
 export default class CreateProfile extends Component {
   render() {

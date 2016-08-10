@@ -1,8 +1,8 @@
-import React from 'react';
-import { Link } from 'react-router';
-import { connect } from 'react-redux';
+import React                                                                from 'react';
+import { Link }                                                             from 'react-router';
+import { connect }                                                          from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
-import { singleListingAction } from '../actions/houseActions';
+import { singleListingAction }                                              from '../actions/houseActions';
 
 class HouseListing extends React.Component {
     render(){

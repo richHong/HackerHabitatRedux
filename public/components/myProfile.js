@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import HouseListOfListings from './houseListOfListings';
-import SingleProfile from './singleProfile';
+import HouseListOfListings  from './houseListOfListings';
+import SingleProfile        from './singleProfile';
 
 export default class MyProfile extends Component {
   constructor(){

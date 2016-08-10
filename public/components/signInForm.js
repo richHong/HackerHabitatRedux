@@ -1,10 +1,5 @@
-import React from 'react';
-import {
-    Router,
-    Route,
-    hashHistory,
-    browserHistory
-} from 'react-router';
+import React                                          from 'react';
+import { Router, Route, hashHistory, browserHistory}  from 'react-router';
 
 class SignInForm extends React.Component {
 

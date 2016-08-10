@@ -1,24 +1,24 @@
 'use strict';
-import React, { Component } from 'react';
-import { render } from 'react-dom';
+import React, { Component }                           from 'react';
+import { render }                                     from 'react-dom';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
+import { createStore }                                from 'redux';
+import { Provider }                                   from 'react-redux';
 import "isomorphic-fetch";
 
-import SignUp from './components/SignUp';
-import SignOut from './components/signout';
+import SignUp        from './components/SignUp';
+import SignOut       from './components/signout';
 import CreateProfile from './components/createProfile';
-import CreateHouse from './components/createHouse';
-import SearchBar from './components/SearchBar';
-import NavBar from './components/navigationBar';
-import MainContain from './containers/MainContain';
-import SignIn from './components/SignInComp';
-import Results from './components/results';
-import FrontPage from './components/frontPage';
+import CreateHouse   from './components/createHouse';
+import SearchBar     from './components/SearchBar';
+import NavBar        from './components/navigationBar';
+import MainContain   from './containers/MainContain';
+import SignIn        from './components/SignInComp';
+import Results       from './components/results';
+import FrontPage     from './components/frontPage';
 import SingleListing from './components/singlelisting';
-import MyProfile from './components/myProfile';
-import ContactForm from './components/contactform';
+import MyProfile     from './components/myProfile';
+import ContactForm   from './components/contactform';
 
 import houseListingReducer from './reducers/appReducers';
 

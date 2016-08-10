@@ -1,8 +1,8 @@
-import React from 'react';
+import React                                                                from 'react';
 import { createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
-import { connect } from 'react-redux';
-import { getHouseAction } from '../actions/houseActions';
-import { Router, Route, hashHistory, browserHistory, Link } from 'react-router';
+import { connect }                                                          from 'react-redux';
+import { getHouseAction }                                                   from '../actions/houseActions';
+import { Router, Route, hashHistory, browserHistory, Link }                 from 'react-router';
 
 class SearchBar extends React.Component {
 	render(){
