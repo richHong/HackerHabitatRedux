@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import getHouseReducer from './houseReducer';
+import getHouseReducer from '../reducers/houseReducer';
 
 var houseListingReducer = combineReducers({
 	listings: getHouseReducer

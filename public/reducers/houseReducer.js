@@ -16,4 +16,4 @@ var getHouseReducer = function(state = {
   };
 };
 
-export default getHouseReducer
+export default getHouseReducer;
