@@ -14,8 +14,8 @@ export default class FrontPage extends Component {
                 <p className="frontPageDescription">And if youre looking for roomates, create your profile and put your hacker-house on the map!</p>
               </div>
               <video autoPlay loop className="fillWidth">
-                  <source src="assets/Working-it/Mp4/Working-it.mp4" type="video/mp4" />
-                  <source src="assets/Working-it/Webm/Working-it.webm" type="video/webm" />
+                  <source src="assets/Home-work/Mp4/Home-work.mp4" type="video/mp4" />
+                  <source src="assets/Home-work/Webm/Home-work.webm" type="video/webm" />
               </video>
             </div>
       }

@@ -17,7 +17,6 @@ var proxy = httpProxy.createProxyServer({
 
 var app = express();
 
-//serving our index.html
 app.use(express.static(publicPath));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -26,6 +25,7 @@ app.use(bodyParser.urlencoded({
 app.use(helmet());
 app.use(multiparty());
 app.use(favicon(__dirname + '/public/assets/black-house.ico'));
+
 require('./server/S3ListingsMiddleware.js')(app);
 require('./server/S3AvatarMiddleware.js')(app);
 
@@ -42,10 +42,10 @@ require('./server/S3AvatarMiddleware.js')(app);
             },
             "body": JSON.stringify(req.body)
     }).then((response, req) => {
-        res.status(response.status).send(response)})
+        res.status(response.status).send(response)});
     });
 
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 //server/compiler.js runs webpack-dev-server which creates the bundle.js which index.html serves
 //will not see a physical bundle.js because webpack-dev-server runs it from memory
