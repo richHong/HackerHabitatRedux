@@ -10,6 +10,7 @@ var port = isProduction ? process.env.PORT : 3000;
 var multiparty = require('connect-multiparty');
 var helmet = require('helmet');
 var fetch = require('isomorphic-fetch');
+var Sequelize = require('sequelize');
 
 var proxy = httpProxy.createProxyServer({
     changeOrigin: true
@@ -28,6 +29,8 @@ app.use(favicon(__dirname + '/public/assets/black-house.ico'));
 
 require('./server/S3ListingsMiddleware.js')(app);
 require('./server/S3AvatarMiddleware.js')(app);
+
+var sequelize = new Sequelize('postgres://fwheybfahuoalr:44kVbWfUQVLQrEag5E3oAMfh2n@ec2-50-17-255-49.compute-1.amazonaws.com:5432/dcrrmheujtq3rq');
 
 // %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   app.route('/email')
