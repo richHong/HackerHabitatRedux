@@ -1,16 +1,19 @@
 'use strict';
-var express = require('express');
-var path = require('path');
-var httpProxy = require('http-proxy');
-var favicon = require('serve-favicon');
-var publicPath = path.resolve(__dirname, 'public');
-var bodyParser = require('body-parser');
-var isProduction = process.env.NODE_ENV === 'production';
-var port = isProduction ? process.env.PORT : 3000;
-var multiparty = require('connect-multiparty');
-var helmet = require('helmet');
-var fetch = require('isomorphic-fetch');
-var Sequelize = require('sequelize');
+var express = require('express'),
+    path = require('path'),
+    httpProxy = require('http-proxy'),
+    favicon = require('serve-favicon'),
+    publicPath = path.resolve(__dirname, 'public'),
+    bodyParser = require('body-parser'),
+    isProduction = process.env.NODE_ENV === 'production',
+    port = isProduction ? process.env.PORT : 3000,
+    multiparty = require('connect-multiparty'),
+    helmet = require('helmet'),
+    fetch = require('isomorphic-fetch'),
+    mongoose = require('mongoose');
+
+var UserController = require('./db/controllers/userController.js'),
+    ListingController = require('./db/controllers/listingController.js');
 
 var proxy = httpProxy.createProxyServer({
     changeOrigin: true
@@ -30,10 +33,9 @@ app.use(favicon(__dirname + '/public/assets/black-house.ico'));
 require('./server/S3ListingsMiddleware.js')(app);
 require('./server/S3AvatarMiddleware.js')(app);
 
-var sequelize = new Sequelize('postgres://fwheybfahuoalr:44kVbWfUQVLQrEag5E3oAMfh2n@ec2-50-17-255-49.compute-1.amazonaws.com:5432/dcrrmheujtq3rq');
+mongoose.connect('mongodb://hacker:habitat@ds153785.mlab.com:53785/heroku_nnwfnw1w');
 
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  app.route('/email')
+app.route('/email')
    .post(function(req, res, err) {
         fetch("https://api.sendgrid.com/v3/mail/send", {
             "method": "POST",
@@ -48,10 +50,18 @@ var sequelize = new Sequelize('postgres://fwheybfahuoalr:44kVbWfUQVLQrEag5E3oAMf
         res.status(response.status).send(response)});
     });
 
-// %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+app.route('/v1/users')
+    .post(UserController.signUpUser)
+    .put(UserController.updateUser)
+    .get(UserController.getAllUsers);
+
+// app.route('/v1/listings')
+//     .get(ListingController.getAllListings)
+//     .post(ListingController.createListing)
 
 //server/compiler.js runs webpack-dev-server which creates the bundle.js which index.html serves
 //will not see a physical bundle.js because webpack-dev-server runs it from memory
+
 if (!isProduction) {
     var bundle = require('./server/compiler.js');
     bundle();

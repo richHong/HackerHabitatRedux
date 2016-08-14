@@ -1,9 +1,64 @@
-var Sequelize = require('sequelize'),
-    sequelize = new Sequelize('postgres://fwheybfahuoalr:44kVbWfUQVLQrEag5E3oAMfh2n@ec2-50-17-255-49.compute-1.amazonaws.com:5432/dcrrmheujtq3rq'),
-    User = require('../models/userModel'),
-    user = new User(Sequelize);
+var userModel = require('../models/userModel.js'),
+    Q    = require('q'),
+    jwt  = require('jwt-simple');
 
-exports.create = function(req, res) {
+exports.signUpUser = function(req, res, next) {
+  var username  = req.body.username,
+      password  = req.body.password,
+      email = req.body.email,
+      create = Q.nbind(userModel.create, userModel),
+      findOne = Q.nbind(userModel.findOne, userModel),
+      newUser = {
+        email: email,
+        password: password,
+        username: username
+      };
+
+  findOne({username: username})
+    .then(function(user) {
+      if (user) {
+        next(new Error('User already exist!'));
+      } else {
+        return create(newUser);
+      }
+    })
+    .then(function (user) {
+      var token = jwt.encode(user, 'secret');
+      res.json({token: token});
+    })
+    .fail(function (error) {
+      next(error);
+    });
+};
+
+exports.signInUser = function(req, res, next) {
+  var username = req.body.username,
+      password = req.body.password;
+
+  var findUser = Q.nbind(userModel.findOne, userModel);
+
+  findUser({username: username})
+    .then(function (user) {
+      if (!user) {
+        next(new Error('User does not exist'));
+      } else {
+        return user.comparePasswords(password)
+          .then(function(foundUser) {
+            if (foundUser) {
+              var token = jwt.encode(user, 'secret');
+              res.json({token: token});
+            } else {
+              return next(new Error('No user'));
+            }
+          });
+      }
+    })
+    .fail(function (error) {
+      next(error);
+    });
+};
+
+exports.updateUser = function(req, res, next) {
   var user = {
     email: req.body.email,
     password: req.body.password,
@@ -16,39 +71,23 @@ exports.create = function(req, res) {
     tech_interests: req.body.email,
     hometown: req.body.email,
     avatar: req.body.email
-};
+  };
 
-user
-  .sync({ force: true })
-  .complete(function(err) {
-    user
-      .create(user)
-      .complete(function(err, account) {
-        if(!!err || !account) {
-          console.log('An error occurred while creating account.');
-          console.log(err.message)
-          res.status(500).end();
-        } else {
-          console.log('Account ' + account.id + ' successfully created.');
-          res.send(account);
-        }
-    });
+  userModel.update({_id:req.body._id}, user, function(err, newUser){
+    if (err){ 
+      console.log(err);
+    } else {
+      res.send('User ' + newUser.username + ' has been updated.');
+    } 
   });
 };
 
-exports.getById = function(req, res) {
-  user
-    .find({ where: { id: req.params.accountId } })
-    .complete(function(err, account) {
-      if(!!err) {
-        console.log('An error occurred while searching for account ' + req.params.accountId);
-        res.status(500).end();
-      } else if(!account) {
-        console.log('No account found for id ' + req.params.accountId);
-        res.status(404).end();
-      } else {
-        console.log('Account located for id ' + req.params.accountId);
-        res.send(account);
-      }
-    });
+exports.getAllUsers = function(req, res, next) {
+  userModel.find(function(err, data){
+    if (err){
+      console.log(err);
+    } else {
+      res.send(data);
+    }
+  });
 };

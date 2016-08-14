@@ -1,16 +1,70 @@
-module.exports = function(Sequelize) {
-  var sequelize = new Sequelize('postgres://fwheybfahuoalr:44kVbWfUQVLQrEag5E3oAMfh2n@ec2-50-17-255-49.compute-1.amazonaws.com:5432/dcrrmheujtq3rq');
+var mongoose = require('mongoose'),
+    bcrypt   = require('bcrypt-nodejs'),
+    Q        = require('q'),
+    SALT_WORK_FACTOR  = 10;
 
-  return sequelize.define('User', {
-    email: Sequelize.STRING,
-    password: Sequelize.STRING,
-    username: Sequelize.STRING,
-    first_name: Sequelize.STRING,
-    last_name: Sequelize.STRING,
-    description: Sequelize.STRING,
-    occupation: Sequelize.STRING,
-    gen_interests: Sequelize.STRING,
-    tech_interests: Sequelize.STRING,
-    hometown: Sequelize.STRING,
-    avatar: Sequelize.STRING
+var UserSchema = new mongoose.Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    },  
+    password: {
+        type: String,
+        required: true
+    },
+    salt: String,
+    username: {
+        type: String,
+        required: true,
+        unique: true
+    },
+    first_name: String,
+    last_name: String,
+    description: String,
+    occupation: String,
+    gen_interests: String,
+    tech_interests: String,
+    hometown: String,
+    avatar: String
+}); 
+
+UserSchema.methods.comparePasswords = function (candidatePassword) {
+  var defer = Q.defer();
+  var savedPassword = this.password;
+  bcrypt.compare(candidatePassword, savedPassword, function (err, isMatch) {
+    if (err) {
+      defer.reject(err);
+    } else {
+      defer.resolve(isMatch);
+    }
+  });
+  return defer.promise;
+};
+
+UserSchema.pre('save', function (next) {
+  var user = this;
+
+  if (!user.isModified('password')) {
+    return next();
+  }
+
+  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+    if (err) {
+      return next(err);
+    }
+
+    bcrypt.hash(user.password, salt, null, function(err, hash) {
+      if (err) {
+        return next(err);
+      }
+
+      user.password = hash;
+      user.salt = salt;
+      next();
+    });
+  });
 });
+
+module.exports = mongoose.model('User', UserSchema);
+
