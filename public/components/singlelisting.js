@@ -11,7 +11,7 @@ class SingleListing extends React.Component {
 
   }
   componentWillMount(){
-    if(!this.props.listing){
+    if(!this.state){
       fetch('https://lit-harbor-15852.herokuapp.com/v1/listings/house/'+this.props.params.house_name)
       .then(results => results.json())
       .then(json => this.setState(json));
