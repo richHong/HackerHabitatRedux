@@ -8,12 +8,15 @@ class SingleListing extends React.Component {
   constructor(props){
     super(props);
     this.state={};
-
   }
   componentWillMount(){
+      console.log('Finding refreshed house');
       fetch('https://lit-harbor-15852.herokuapp.com/v1/listings/house/'+this.props.params.house_name)
       .then(results => results.json())
-      .then(json => this.setState(json));
+      .then(json => {
+        this.setState(json);
+        console.log(this.state);
+      });
   }
 	render(){
 		return <div>
