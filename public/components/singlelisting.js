@@ -10,7 +10,6 @@ class SingleListing extends React.Component {
     this.state={};
   }
   componentWillMount(){
-    console.log(this.props.params)
     if(!this.props.listing){
       fetch('https://lit-harbor-15852.herokuapp.com/v1/listings/house/'+this.props.params.house_name)
       .then(results => results.json())
@@ -41,7 +40,7 @@ class SingleListing extends React.Component {
 
           <b><i>Dates Available:</i></b> { this.props.listing ? this.props.listing.dates_avail : this.state.dates_avail } <br /><br />
 
-          <b><i>House Interests:</i></b> { this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) :  this.state.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>)  }<br /><br />
+          <b><i>House Interests:</i></b> { this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) : this.state.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>)  }<br /><br />
 
           <b><i>House Mission:</i></b> { this.props.listing ? this.props.listing.house_mission : this.state.house_mission } <br /><br />
 
@@ -49,7 +48,7 @@ class SingleListing extends React.Component {
 
           <b><i>Amenities:</i></b> { this.props.listing ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) : this.state.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) } <br /><br />
 
-          <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : this.state:primary_member } <br /><br />
+          <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : this.state.primary_member } <br /><br />
 
           <form>
             <h4 className="contactHouse">
