@@ -69,7 +69,7 @@ app.get('/v1/listings/:userId', ListingController.getListingsById);
  
 app.get('/v1/listings/city/:city', ListingController.getListingsByCity);
 
-app.get('/v1/listings/house/:house_name', ListingController.getListingsByName)
+app.get('/v1/listings/house/:house_name', ListingController.getListingsByName);
 
 
 //server/compiler.js runs webpack-dev-server which creates the bundle.js which index.html serves
