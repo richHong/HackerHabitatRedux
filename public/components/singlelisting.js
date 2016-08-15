@@ -5,6 +5,18 @@ import MyCarousel  from './carousel';
 
 
 class SingleListing extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={};
+  }
+  componentWillMount(){
+    console.log(this.props.params)
+    if(!this.props.listing){
+      fetch('/v1/listings/house/'+this.props.params.house_name)
+      .then(results => results.json())
+      .then(json => this.setState(json));
+    }
+  }
 	render(){
 		return <div>
         <div className='carousel'>
@@ -14,14 +26,14 @@ class SingleListing extends React.Component {
         <div className="houseInfo">
 
   				<span className='houseName'>
-            <b>{ this.props.listing.house_name }</b>
+            <b>{ this.props.listing ? this.props.listing.house_name : this.state.house_name }</b>
           </span><br/>
 
-          <i>{ this.props.listing.heading }</i><br/><br/>
+          <i>{ this.props.listing ? this.props.listing.heading : this.state.heading }</i><br/><br/>
 
           <b><i>Location:</i></b><br/>
-          { this.props.listing ? this.props.listing.street_add : null }<br/>
-          { this.props.listing ? this.props.listing.city : null },{ this.props.listing ? this.props.listing.state : null } { this.props.listing ? this.props.listing.zipcode : null }<br/><br/>
+          { this.props.listing ? this.props.listing.street_add : this.state.street_add }<br/>
+          { this.props.listing ? this.props.listing.city : this.state.city },{ this.props.listing ? this.props.listing.state : null } { this.props.listing ? this.props.listing.zipcode : null }<br/><br/>
 
           <b><i>Price:</i></b> ${ this.props.listing ? this.props.listing.price : null } per night<br /><br/>
 

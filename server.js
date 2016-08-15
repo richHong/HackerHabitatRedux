@@ -52,12 +52,25 @@ app.route('/email')
 
 app.route('/v1/users')
     .post(UserController.signUpUser)
-    .put(UserController.updateUser)
-    .get(UserController.getAllUsers);
+    .get(UserController.checkAuth, UserController.getAllUsers);
 
-// app.route('/v1/listings')
-//     .get(ListingController.getAllListings)
-//     .post(ListingController.createListing)
+app.route('/v1/users/signin')
+    .post(UserController.signInUser);
+
+app.route('/v1/users/:userId')
+    .get(UserController.getUserById)
+    .put(UserController.checkAuth, UserController.updateUser);
+
+app.route('/v1/listings')
+    .get(ListingController.getAllListings)
+    .post(ListingController.createListing);
+
+app.get('/v1/listings/:userId', ListingController.getListingsById);
+ 
+app.get('/v1/listings/city/:city', ListingController.getListingsByCity);
+
+app.get('/v1/listings/house/:house_name', ListingController.getListingsByName)
+
 
 //server/compiler.js runs webpack-dev-server which creates the bundle.js which index.html serves
 //will not see a physical bundle.js because webpack-dev-server runs it from memory

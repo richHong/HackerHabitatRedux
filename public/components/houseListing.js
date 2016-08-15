@@ -10,7 +10,7 @@ class HouseListing extends React.Component {
         <div className='listingBorder'>  	
 			<Link 
                 className='singleListing' 
-                to="/singlelisting" 
+                to={ "/singlelisting/"+this.props.house.house_name }
                 onClick={ this.getSingleListing.bind(this) }>
         		<img 
                     className='housePic' 

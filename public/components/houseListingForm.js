@@ -95,7 +95,7 @@ class HousingForm extends React.Component {
     .then(response => response.json())
     .then(json => geolocation = json.results[0].geometry.location)
     .then(() => {
-      fetch('http://localhost:3001/v1/listings?access_token='+authToken, {
+      fetch('http://localhost:3000/v1/listings?access_token='+authToken, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

@@ -9,11 +9,10 @@ export default class MyProfile extends Component {
   }
   componentWillMount(){
     let userID = window.localStorage.getItem('userID');
-
-    fetch('http://localhost:3001/v1/listings/?user_id='+userID)
+    fetch('http://localhost:3000/v1/listings/'+userID)
     .then(response => response.json())
     .then(json => {
-      this.setState({ favorites: json.data });
+      this.setState({ favorites: json });
     });
   }
   render() {

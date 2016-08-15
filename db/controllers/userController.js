@@ -1,5 +1,5 @@
 var userModel = require('../models/userModel.js'),
-    Q    = require('q'),
+    Q = require('q'),
     jwt  = require('jwt-simple');
 
 exports.signUpUser = function(req, res, next) {
@@ -12,7 +12,9 @@ exports.signUpUser = function(req, res, next) {
         email: email,
         password: password,
         username: username
-      };
+      },
+      user_id,
+      id;
 
   findOne({username: username})
     .then(function(user) {
@@ -24,7 +26,13 @@ exports.signUpUser = function(req, res, next) {
     })
     .then(function (user) {
       var token = jwt.encode(user, 'secret');
-      res.json({token: token});
+      user_id = user._id;
+      id = user._id;
+      res.json({
+                token: token,
+                user_id: user_id,
+                id: id
+              });
     })
     .fail(function (error) {
       next(error);
@@ -33,12 +41,16 @@ exports.signUpUser = function(req, res, next) {
 
 exports.signInUser = function(req, res, next) {
   var username = req.body.username,
-      password = req.body.password;
+      password = req.body.password,
+      user_id,
+      id;
 
   var findUser = Q.nbind(userModel.findOne, userModel);
 
   findUser({username: username})
     .then(function (user) {
+      user_id = user._id;
+      id = user._id;
       if (!user) {
         next(new Error('User does not exist'));
       } else {
@@ -46,7 +58,11 @@ exports.signInUser = function(req, res, next) {
           .then(function(foundUser) {
             if (foundUser) {
               var token = jwt.encode(user, 'secret');
-              res.json({token: token});
+              res.json({
+                token: token,
+                user_id: user_id,
+                id: id
+              });
             } else {
               return next(new Error('No user'));
             }
@@ -88,6 +104,41 @@ exports.getAllUsers = function(req, res, next) {
       console.log(err);
     } else {
       res.send(data);
+    }
+  });
+};
+
+exports.checkAuth = function(req, res, next){
+  var token = req.headers['x-access-token'];
+  console.log('This is the token', req);
+    if (!token) {
+      next(new Error('No token'));
+    } else {
+      var user = jwt.decode(token, 'secret');
+      var findUser = Q.nbind(User.findOne, User);
+      findUser({username: user.username})
+        .then(function (foundUser) {
+          if (foundUser) {
+            // res.send(200);
+            next(req, res);
+          } else {
+            res.send(401);
+          }
+        })
+        .fail(function (error) {
+          next(error);
+        });
+    }
+};
+
+exports.getUserById = function(req, res, next){
+  var user_id = req.params.userId,
+  findOne = Q.nbind(userModel.findOne, userModel);
+
+  findOne({_id: user_id})
+  .then(function(user){
+    if (user){
+      res.send(user);
     }
   });
 };

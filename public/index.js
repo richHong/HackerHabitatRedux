@@ -73,7 +73,7 @@ render((
           <Route path='/signup' component={ SignUp } />
           <Route path='/createHouse' component={ CreateHouse } onEnter={requireAuth}/>
           <Route path='/signin' component={ SignIn } />
-          <Route path='/singlelisting' component={ SingleListing } />
+          <Route path='/singlelisting/:house_name' component={ SingleListing } />
           <Route path='/signout' component={ SignOut } onEnter={logout} />
           <Route path='/profile' component={ MyProfile } onEnter={requireAuth}/>
           <Route path='/contact' component={ ContactForm } onEnter={requireAuth}/>

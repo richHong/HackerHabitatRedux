@@ -6,22 +6,22 @@ class SignInForm extends React.Component {
         handleSubmit(e, username, password) {
             e.preventDefault();
 
-            fetch('http://localhost:3001/v1/access_tokens', {
+            fetch('http://localhost:3000/v1/users/signin', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                         username: username.value.toLowerCase(),
-                        password: password.value,
-                        grant_type: 'password'
+                        password: password.value
                     })
                 })
                 .then(response => response.json())
                 .then((data) => {
-                    window.localStorage.setItem('userID', data.data[0].user_id);
-                    window.localStorage.setItem('token', data.data[0].access_token);
-                    window.localStorage.setItem('i', data.data[0].id);
+                    console.log('Signin data',data);
+                    window.localStorage.setItem('userID', data.user_id);
+                    window.localStorage.setItem('token', data.token);
+                    window.localStorage.setItem('i', data.id);
                     window.location = '#/';
                 });
         }

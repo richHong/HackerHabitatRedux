@@ -59,17 +59,17 @@ class ProfileForm extends React.Component {
       .then(response => console.log(response));
     }
 
-    fetch('http://localhost:3001/v1/users/' + userID)
+    fetch('http://localhost:3000/v1/users/' + userID)
     .then(response => response.json())
     .then(json => {
-        my_firstname = ifNotEmptyChangeTo(firstName.value, json.data[0].first_name);
-        my_lastname = ifNotEmptyChangeTo(lastName.value, json.data[0].last_name);
-        my_hometown = ifNotEmptyChangeTo(hometown.value, json.data[0].hometown);
-        my_description = ifNotEmptyChangeTo(description.value, json.data[0].description);
-        my_occupation = ifNotEmptyChangeTo(occupation.value, json.data[0].occupation);
+        my_firstname = ifNotEmptyChangeTo(firstName.value, json.first_name);
+        my_lastname = ifNotEmptyChangeTo(lastName.value, json.last_name);
+        my_hometown = ifNotEmptyChangeTo(hometown.value, json.hometown);
+        my_description = ifNotEmptyChangeTo(description.value, json.description);
+        my_occupation = ifNotEmptyChangeTo(occupation.value, json.occupation);
       })
     .then(() => {     
-    fetch('http://localhost:3001/v1/users/'+userID+'?access_token='+authToken, {
+    fetch('http://localhost:3000/v1/users/'+userID+'?access_token='+authToken, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

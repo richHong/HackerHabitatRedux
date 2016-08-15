@@ -3,7 +3,11 @@ var mongoose = require('mongoose');
 var ListingSchema = new mongoose.Schema({
     email: String,
     user_id: Number,
-    house_name: String,
+    house_name: {
+        type: String,
+        required: true,
+        unique: true
+    },
     heading: String,
     street_add: String,
     city: String,
