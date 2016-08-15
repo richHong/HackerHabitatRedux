@@ -6,7 +6,7 @@ class SignInForm extends React.Component {
         handleSubmit(e, username, password) {
             e.preventDefault();
 
-            fetch('http://localhost:3000/v1/users/signin', {
+            fetch('//localhost:3000/v1/users/signin', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

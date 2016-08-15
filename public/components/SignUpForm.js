@@ -43,7 +43,7 @@ class SignUpForm extends React.Component {
 	    if (password.length >= 5) {
 	        if (password === this.confirmPassword.value) {
 	            if (this.email.value.indexOf("@") > -1 && this.email.value.indexOf(".") > -1) {
-	                fetch('http://localhost:3000/v1/users/', {
+	                fetch('//localhost:3000/v1/users/', {
 	                        method: 'POST',
 	                        headers: {
 	                            'Content-Type': 'application/json'

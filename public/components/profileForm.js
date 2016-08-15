@@ -59,7 +59,7 @@ class ProfileForm extends React.Component {
       .then(response => console.log(response));
     }
 
-    fetch('http://localhost:3000/v1/users/' + userID)
+    fetch('//localhost:3000/v1/users/' + userID)
     .then(response => response.json())
     .then(json => {
         my_firstname = ifNotEmptyChangeTo(firstName.value, json.first_name);
@@ -69,7 +69,7 @@ class ProfileForm extends React.Component {
         my_occupation = ifNotEmptyChangeTo(occupation.value, json.occupation);
       })
     .then(() => {     
-    fetch('http://localhost:3000/v1/users/'+userID+'?access_token='+authToken, {
+    fetch('//localhost:3000/v1/users/'+userID+'?access_token='+authToken, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
