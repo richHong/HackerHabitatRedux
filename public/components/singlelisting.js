@@ -33,27 +33,27 @@ class SingleListing extends React.Component {
 
           <b><i>Location:</i></b><br/>
           { this.props.listing ? this.props.listing.street_add : this.state.street_add }<br/>
-          { this.props.listing ? this.props.listing.city : this.state.city },{ this.props.listing ? this.props.listing.state : null } { this.props.listing ? this.props.listing.zipcode : null }<br/><br/>
+          { this.props.listing ? this.props.listing.city : this.state.city },{ this.props.listing ? this.props.listing.state : this.state.state } { this.props.listing ? this.props.listing.zipcode : this.state.zipcode }<br/><br/>
 
-          <b><i>Price:</i></b> ${ this.props.listing ? this.props.listing.price : null } per night<br /><br/>
+          <b><i>Price:</i></b> ${ this.props.listing ? this.props.listing.price : this.state.price } per night<br /><br/>
 
-          <b><i>Vacancies:</i></b> { this.props.listing ? this.props.listing.vacancies : null } <br /><br />
+          <b><i>Vacancies:</i></b> { this.props.listing ? this.props.listing.vacancies : this.state.vacancies } <br /><br />
 
-          <b><i>Dates Available:</i></b> { this.props.listing ? this.props.listing.dates_avail : null } <br /><br />
+          <b><i>Dates Available:</i></b> { this.props.listing ? this.props.listing.dates_avail : this.state.dates_avail } <br /><br />
 
-          <b><i>House Interests:</i></b> { this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) :  null }<br /><br />
+          <b><i>House Interests:</i></b> { this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) :  this.state.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>)  }<br /><br />
 
-          <b><i>House Mission:</i></b> { this.props.listing ? this.props.listing.house_mission : null } <br /><br />
+          <b><i>House Mission:</i></b> { this.props.listing ? this.props.listing.house_mission : this.state.house_mission } <br /><br />
 
-          <b><i>House Rules:</i></b> { this.props.listing ? this.props.listing.house_rules : null } <br /><br />
+          <b><i>House Rules:</i></b> { this.props.listing ? this.props.listing.house_rules : this.state.house_rules } <br /><br />
 
-          <b><i>Amenities:</i></b> { this.props.listing ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) :  null } <br /><br />
+          <b><i>Amenities:</i></b> { this.props.listing ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) : this.state.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) } <br /><br />
 
-          <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : null } <br /><br />
+          <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : this.state:primary_member } <br /><br />
 
           <form>
             <h4 className="contactHouse">
-              <b>Contact { this.props.listing ? this.props.listing.house_name : 'Hacker House' }:</b>
+              <b>Contact { this.props.listing ? this.props.listing.house_name : this.state.house_name }:</b>
             </h4>
             <label>Your Message:</label>
             <br />
