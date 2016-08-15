@@ -7,7 +7,29 @@ import MyCarousel  from './carousel';
 class SingleListing extends React.Component {
   constructor(props){
     super(props);
-    this.state={};
+    this.state={
+      house_name: '',
+      heading: '',
+      street_add: '',
+      city: '',
+      state: '',
+      zipcode: '',
+      price: 0,
+      dates_avail: new Date(),
+      house_interests: [],
+      house_mission: '',
+      house_rules: '',
+      vacancies: 0,
+      primary_member: '',
+      amenities: [],
+      lat: '',
+      lng: '',
+      pic1: '',
+      pic2: '',
+      pic3: '',
+      pic4: '',
+      pic5: ''
+    };
   }
   componentWillMount(){
       console.log('Finding refreshed house');
@@ -15,7 +37,7 @@ class SingleListing extends React.Component {
       fetch('https://lit-harbor-15852.herokuapp.com/v1/listings/house/'+this.props.params.house_name)
       .then(results => results.json())
       .then(json => {
-        that.setState(json);
+        this.setState(json);
         console.log(this.state);
       });
   }
@@ -30,34 +52,34 @@ class SingleListing extends React.Component {
         <div className="houseInfo">
 
   				<span className='houseName'>
-            <b>{ this.props.listing.house_name ? this.props.listing.house_name : this.state.house_name }</b>
+            <b>{ this.props.listing ? this.props.listing.house_name : this.state.house_name }</b>
           </span><br/>
 
-          <i>{ this.props.listing.heading ? this.props.listing.heading : this.state.heading }</i><br/><br/>
+          <i>{ this.props.listing ? this.props.listing.heading : this.state.heading }</i><br/><br/>
 
           <b><i>Location:</i></b><br/>
-          { this.props.listing.street_add ? this.props.listing.street_add : this.state.street_add }<br/>
-          { this.props.listing.city ? this.props.listing.city : this.state.city },{ this.props.listing.state ? this.props.listing.state : this.state.state } { this.props.listing.zipcode ? this.props.listing.zipcode : this.state.zipcode }<br/><br/>
+          { this.props.listing ? this.props.listing.street_add : this.state.street_add }<br/>
+          { this.props.listing ? this.props.listing.city : this.state.city },{ this.props.listing ? this.props.listing.state : this.state.state } { this.props.listing ? this.props.listing.zipcode : this.state.zipcode }<br/><br/>
 
-          <b><i>Price:</i></b> ${ this.props.listing.price ? this.props.listing.price : this.state.price } per night<br /><br/>
+          <b><i>Price:</i></b> ${ this.props.listing ? this.props.listing.price : this.state.price } per night<br /><br/>
 
-          <b><i>Vacancies:</i></b> { this.props.listing.vacancies ? this.props.listing.vacancies : this.state.vacancies } <br /><br />
+          <b><i>Vacancies:</i></b> { this.props.listing ? this.props.listing.vacancies : this.state.vacancies } <br /><br />
 
-          <b><i>Dates Available:</i></b> { this.props.listing.dates_avail ? this.props.listing.dates_avail : this.state.dates_avail } <br /><br />
+          <b><i>Dates Available:</i></b> { this.props.listing ? this.props.listing.dates_avail : this.state.dates_avail } <br /><br />
 
-          <b><i>House Interests:</i></b> { this.props.listing.house_interests ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) : this.state.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>)  }<br /><br />
+          <b><i>House Interests:</i></b> { this.props.listing ? this.props.listing.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>) : this.state.house_interests.split(',').map((interest, i) => <span key={ i } >{ interest }, </span>)  }<br /><br />
 
-          <b><i>House Mission:</i></b> { this.props.listing.house_mission ? this.props.listing.house_mission : this.state.house_mission } <br /><br />
+          <b><i>House Mission:</i></b> { this.props.listing ? this.props.listing.house_mission : this.state.house_mission } <br /><br />
 
-          <b><i>House Rules:</i></b> { this.props.listing.house_rules ? this.props.listing.house_rules : this.state.house_rules } <br /><br />
+          <b><i>House Rules:</i></b> { this.props.listing ? this.props.listing.house_rules : this.state.house_rules } <br /><br />
 
-          <b><i>Amenities:</i></b> { this.props.listing.amenities ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) : this.state.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) } <br /><br />
+          <b><i>Amenities:</i></b> { this.props.listing ? this.props.listing.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) : this.state.amenities.split(',').map((amenity, i) => <span key={ i } >{ amenity }, </span>) } <br /><br />
 
-          <b><i>Primary Member:</i></b> { this.props.listing.primary_member ? this.props.listing.primary_member : this.state.primary_member } <br /><br />
+          <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : this.state.primary_member } <br /><br />
 
           <form>
             <h4 className="contactHouse">
-              <b>Contact { this.props.listing.house_name ? this.props.listing.house_name : this.state.house_name }:</b>
+              <b>Contact { this.props.listing ? this.props.listing.house_name : this.state.house_name }:</b>
             </h4>
             <label>Your Message:</label>
             <br />
