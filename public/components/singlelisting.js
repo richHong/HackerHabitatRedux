@@ -8,27 +8,29 @@ class SingleListing extends React.Component {
   constructor(props){
     super(props);
     this.state={
-      house_name: '',
-      heading: '',
-      street_add: '',
-      city: '',
-      state: '',
-      zipcode: '',
-      price: 0,
-      dates_avail: new Date(),
-      house_interests: '',
-      house_mission: '',
-      house_rules: '',
-      vacancies: 0,
-      primary_member: '',
-      amenities: '',
-      lat: '',
-      lng: '',
-      pic1: '',
-      pic2: '',
-      pic3: '',
-      pic4: '',
-      pic5: ''
+      listing:{
+        house_name: '',
+        heading: '',
+        street_add: '',
+        city: '',
+        state: '',
+        zipcode: '',
+        price: 0,
+        dates_avail: new Date(),
+        house_interests: '',
+        house_mission: '',
+        house_rules: '',
+        vacancies: 0,
+        primary_member: '',
+        amenities: '',
+        lat: '',
+        lng: '',
+        pic1: '',
+        pic2: '',
+        pic3: '',
+        pic4: '',
+        pic5: ''
+      }
     };
   }
   componentWillMount(){
