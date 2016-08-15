@@ -16,7 +16,7 @@ class SingleListing extends React.Component {
         state: '',
         zipcode: '',
         price: 0,
-        dates_avail: new Date(),
+        dates_avail: '',
         house_interests: '',
         house_mission: '',
         house_rules: '',
