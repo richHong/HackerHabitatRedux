@@ -10,7 +10,7 @@ export default class singleProfile extends Component {
     let authToken = window.localStorage.getItem('token');
     let userID = window.localStorage.getItem('userID');
 
-     fetch('http://localhost:3000/v1/users/'+userID+'?access_token='+authToken)
+     fetch('https://lit-harbor-15852.herokuapp.com/v1/users/'+userID+'?access_token='+authToken)
      .then(response => response.json())
      .then(json => this.setState(json));
   }

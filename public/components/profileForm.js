@@ -55,11 +55,11 @@ class ProfileForm extends React.Component {
       avatarName = 'https://s3-us-west-1.amazonaws.com/hackerhabitatavatars/'+avatar.value.slice(12);
       var form = document.getElementById('avatarForm');
       var fdata = new FormData(form);
-      Axios.post('http://localhost:3000/v1/ap', fdata)
+      Axios.post('https://lit-harbor-15852.herokuapp.com/v1/ap', fdata)
       .then(response => console.log(response));
     }
 
-    fetch('//localhost:3000/v1/users/' + userID)
+    fetch('https://lit-harbor-15852.herokuapp.com/v1/users/' + userID)
     .then(response => response.json())
     .then(json => {
         my_firstname = ifNotEmptyChangeTo(firstName.value, json.first_name);
@@ -69,7 +69,7 @@ class ProfileForm extends React.Component {
         my_occupation = ifNotEmptyChangeTo(occupation.value, json.occupation);
       })
     .then(() => {     
-    fetch('//localhost:3000/v1/users/'+userID+'?access_token='+authToken, {
+    fetch('https://lit-harbor-15852.herokuapp.com/v1/users/'+userID+'?access_token='+authToken, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
