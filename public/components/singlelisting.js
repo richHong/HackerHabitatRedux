@@ -8,6 +8,7 @@ class SingleListing extends React.Component {
   constructor(props){
     super(props);
     this.state={};
+
   }
   componentWillMount(){
     if(!this.props.listing){
@@ -17,6 +18,7 @@ class SingleListing extends React.Component {
     }
   }
 	render(){
+    console.log(this.state)
 		return <div>
         <div className='carousel'>
           <MyCarousel />
