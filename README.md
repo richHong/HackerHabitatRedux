@@ -29,8 +29,7 @@ Visit https://hackerhabitat.org
 - React/Redux
 - Node
 - Express
-- Nodal
-- PostgreSQL
+- MongoDB
 
 ## Development
 
@@ -43,7 +42,7 @@ Make sure to install and start PostgreSQL and psql [here](https://www.postgresql
 
 From within the root directory:
 ```sh
-npm install --save
+npm install
 ```
 
 Start your Express server within the root directory:
@@ -51,10 +50,6 @@ Start your Express server within the root directory:
 npm start
 ```
 
-And the Nodal server from within '/nodal':
-```sh
-nodal s
-```
 <!-- ### Future Features -->
 
 ### Roadmap
