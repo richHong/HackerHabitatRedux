@@ -31,7 +31,6 @@
     "body-parser": "latest",
     "chai": "~3.5.0",
     "connect-multiparty": "^2.0.0",
-    "emailjs": "^1.0.4",
     "es6-promise": "^3.2.1",
     "express": "^4.13.3",
     "helmet": "^2.1.0",
