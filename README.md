@@ -38,8 +38,6 @@ Visit https://hackerhabitat.org
 
 - __Install your Dependencies__:
 
-Make sure to install and start PostgreSQL and psql [here](https://www.postgresql.org/download/).
-
 From within the root directory:
 ```sh
 npm install
