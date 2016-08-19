@@ -76,9 +76,6 @@ exports.signInUser = function(req, res, next) {
 
 exports.updateUser = function(req, res, next) {
   var user = {
-    email: req.body.email,
-    password: req.body.password,
-    username: req.body.username,
     first_name: req.body.first_name,
     last_name: req.body.last_name,
     description: req.body.description,
