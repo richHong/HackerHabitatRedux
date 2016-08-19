@@ -49,11 +49,11 @@ exports.signInUser = function(req, res, next) {
 
   findUser({username: username})
     .then(function (user) {
-      user_id = user._id;
-      id = user._id;
       if (!user) {
         next(new Error('User does not exist'));
       } else {
+        user_id = user._id;
+        id = user._id;
         return user.comparePasswords(password)
           .then(function(foundUser) {
             if (foundUser) {
@@ -70,7 +70,7 @@ exports.signInUser = function(req, res, next) {
       }
     })
     .fail(function (error) {
-      next(error);
+      res.send(error);
     });
 };
 
