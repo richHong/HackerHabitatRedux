@@ -1,14 +1,13 @@
-var config = require('../config.json');
 var fs = require('fs');
 var S3FS = require('s3fs');
 
 module.exports = function (app) {
 
   var s3fsImplementation1 = new S3FS('hackerhabitatavatars', {
-    accessKeyId: config.accessKeyId,
-    secretAccessKey: config.secretAccessKey,
-    endpoint: config.endpoint,
-    region: config.region
+    accessKeyId: process.env.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey,
+    endpoint: process.env.endpoint,
+    region: process.env.region
   });
 
   app.post('/v1/ap', function(req, res) {
