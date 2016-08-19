@@ -51,7 +51,7 @@ class HousingForm extends React.Component {
       pic1Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic1.value.slice(12);
       var form = document.getElementById('pic1Form');
       var fdata = new FormData(form);
-      Axios.post('https://lit-harbor-15852.herokuapp.com/v1/lp', fdata);
+      Axios.post('/v1/lp', fdata);
     }
 
     if (pic2.value === ''){
@@ -60,7 +60,7 @@ class HousingForm extends React.Component {
       pic2Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic2.value.slice(12);
       var form = document.getElementById('pic2Form');
       var fdata = new FormData(form);
-      Axios.post('https://lit-harbor-15852.herokuapp.com/v1/lp', fdata)
+      Axios.post('/v1/lp', fdata)
       .then(response => console.log(response));
     }
 
@@ -70,7 +70,7 @@ class HousingForm extends React.Component {
       pic3Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic3.value.slice(12);
       var form = document.getElementById('pic3Form');
       var fdata = new FormData(form);
-      Axios.post('https://lit-harbor-15852.herokuapp.com/v1/lp', fdata);
+      Axios.post('/v1/lp', fdata);
     }
 
     if (pic4.value === ''){
@@ -79,7 +79,7 @@ class HousingForm extends React.Component {
       pic4Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic4.value.slice(12);
       var form = document.getElementById('pic4Form');
       var fdata = new FormData(form);
-      Axios.post('https://lit-harbor-15852.herokuapp.com/v1/lp', fdata);
+      Axios.post('/v1/lp', fdata);
     }
 
     if (pic5.value === ''){
@@ -88,14 +88,14 @@ class HousingForm extends React.Component {
       pic5Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic5.value.slice(12);
       var form = document.getElementById('pic5Form');
       var fdata = new FormData(form);
-      Axios.post('https://lit-harbor-15852.herokuapp.com/v1/lp', fdata);
+      Axios.post('/v1/lp', fdata);
     }
 
     fetch('//maps.googleapis.com/maps/api/geocode/json?address='+street.value+'+'+city.value+'+'+state.value)
     .then(response => response.json())
     .then(json => geolocation = json.results[0].geometry.location)
     .then(() => {
-      fetch('https://lit-harbor-15852.herokuapp.com/v1/listings?access_token='+authToken, {
+      fetch('/v1/listings?access_token='+authToken, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

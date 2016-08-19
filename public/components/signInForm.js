@@ -6,7 +6,7 @@ class SignInForm extends React.Component {
         handleSubmit(e, username, password) {
             e.preventDefault();
 
-            fetch('https://lit-harbor-15852.herokuapp.com/v1/users/signin', {
+            fetch('/v1/users/signin', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'

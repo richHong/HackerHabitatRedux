@@ -42,13 +42,6 @@ var logout = function(nextState, replace) {
     let id = window.localStorage.getItem('i');
 
     if (!!localStorage.token) {
-        fetch('http://localhost:3001/v1/access_tokens/'+id+'?access_token='+authToken, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-            })
-            .then((response) => response.json());
         delete localStorage.token;
         delete localStorage.i;
         delete localStorage.userID;
