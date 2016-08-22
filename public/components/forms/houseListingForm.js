@@ -278,40 +278,40 @@ class HousingForm extends Component {
                 className='fileUpload'
                 ref={ input => this.pic1 = input } />
             </form>
-
+            <br/>
             <form id='pic2Form'>
               <label>Upload Picture 2:</label>
-              <br/><br/>
+              <br/>
               <input 
                 type='file' 
                 name='file' 
                 className='fileUpload'
                 ref={ input => this.pic2 = input } />
             </form>
-
+            <br/>
             <form id='pic3Form'>
               <label>Upload Picture 3:</label>
-              <br/><br/>
+              <br/>
               <input 
                 type='file' 
                 name='file' 
                 className='fileUpload'
                 ref={ input => this.pic3 = input } />
             </form>
-
+            <br/>
             <form id='pic4Form'>
               <label>Upload Picture 4:</label>
-              <br/><br/><br/>
+              <br/>
               <input 
                 type='file' 
                 name='file' 
                 className='fileUpload'
                 ref={ input => this.pic4 = input } />
             </form>
-
+            <br/>
             <form id='pic5Form'>
               <label>Upload Picture 5:</label>
-              <br/><br/>
+              <br/>
               <input 
                 type='file' 
                 name='file' 
