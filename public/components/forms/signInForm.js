@@ -1,7 +1,7 @@
-import React                                          from 'react';
+import React, { Component }                           from 'react';
 import { Router, Route, hashHistory, browserHistory}  from 'react-router';
 
-class SignInForm extends React.Component {
+class SignInForm extends Component {
 
 handleSubmit(e, username, password) {
     e.preventDefault();

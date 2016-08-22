@@ -1,8 +1,8 @@
-import React                                          from 'react';
+import React, { Component }                           from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import Axios                                          from 'axios';
 
-class HousingForm extends React.Component {
+class HousingForm extends Component {
   constructor(props){
     super(props);
     this.state = {

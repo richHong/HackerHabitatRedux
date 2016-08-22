@@ -1,4 +1,4 @@
-import React                                                                from 'react';
+import React, { Component }                                                 from 'react';
 import { createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
 import { connect }                                                          from 'react-redux';
 import { getHouseAction }                                                   from '../actions/houseActions';

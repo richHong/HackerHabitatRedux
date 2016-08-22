@@ -6,19 +6,21 @@ import { createStore }                                from 'redux';
 import { Provider }                                   from 'react-redux';
 import "isomorphic-fetch";
 
-import SignUp        from './components/SignUp';
-import SignOut       from './components/signout';
-import CreateProfile from './components/createProfile';
-import CreateHouse   from './components/createHouse';
-import SearchBar     from './components/SearchBar';
-import NavBar        from './components/navigationBar';
-import MainContain   from './containers/MainContain';
-import SignIn        from './components/SignInComp';
-import Results       from './components/results';
+import CreateProfile from './components/containers/createProfileContainer';
+import CreateHouse   from './components/containers/createHouseContainer';
+import MainContain   from './components/containers/mainContainer';
+import MyProfile     from './components/containers/myProfileContainer';
+import SignIn        from './components/containers/signInContainer';
+import SignUp        from './components/containers/signUpContainer';
+
 import FrontPage     from './components/frontPage';
+import NavBar        from './components/navigationBar';
+import Results       from './components/results';
+import SearchBar     from './components/searchBar';
+import SignOut       from './components/signout';
 import SingleListing from './components/singlelisting';
-import MyProfile     from './components/myProfile';
-import ContactForm   from './components/contactform';
+
+import ContactForm   from './components/forms/contactform';
 
 import houseListingReducer from './reducers/appReducers';
 

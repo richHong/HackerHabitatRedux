@@ -1,8 +1,8 @@
-import React, {Component}                        from 'react';
-import {Carousel, CarouselItem, CarouselCaption} from 'react-bootstrap';
+import React, { Component }                        from 'react';
+import { Carousel, CarouselItem, CarouselCaption } from 'react-bootstrap';
 import { connect }                               from 'react-redux';
 
-class MyCarousel extends React.Component {
+class MyCarousel extends Component {
   constructor(props){
     super(props);
     this.state = {};

@@ -1,10 +1,10 @@
-import React       from 'react';
-import { connect } from 'react-redux';
-import SingleGMaps from './singleMap';
-import MyCarousel  from './carousel';
+import React, { Component }       from 'react';
+import { connect }                from 'react-redux';
+import SingleGMaps                from './singleMap';
+import MyCarousel                 from './carousel';
 
 
-class SingleListing extends React.Component {
+class SingleListing extends Component {
   constructor(props){
     super(props);
     this.state={

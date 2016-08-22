@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HouseListingForm     from './houseListingForm';
+import HouseListingForm     from '../forms/houseListingForm';
 
 export default class CreateHouse extends Component {
   render() {

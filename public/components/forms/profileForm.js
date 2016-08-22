@@ -1,12 +1,12 @@
-import React                                          from 'react';
+import React, { Component }                           from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import Axios                                          from 'axios';
 
-function ifNotEmptyChangeTo(currentValue, previousValue){
+function ifNotEmptyChangeTo (currentValue, previousValue) {
   return currentValue !== "" ? currentValue : previousValue;
 };
 
-class ProfileForm extends React.Component {
+class ProfileForm extends Component {
   constructor(props){
     super(props);
 
@@ -21,7 +21,7 @@ class ProfileForm extends React.Component {
     this.addTech = this.addTech.bind(this);
   }
   addGeneral (value){
-    if (this.state.general.includes(value)){
+    if (this.state.general.includes(value)) {
       this.state.general.forEach((interest, index, list) => {
         list.splice(index,1);
       });
@@ -30,7 +30,7 @@ class ProfileForm extends React.Component {
     }
   }
   addTech (value){
-    if (this.state.tech.includes(value)){
+    if (this.state.tech.includes(value)) {
       this.state.tech.forEach((interest, index, list) => {
         list.splice(index,1);
       });
@@ -40,6 +40,7 @@ class ProfileForm extends React.Component {
   }
   submit(e, avatar, firstName, lastName, description, hometown, occupation, general, tech){
     e.preventDefault();
+    
     let authToken = window.localStorage.getItem('token');
     let userID = window.localStorage.getItem('userID');
     let avatarName;

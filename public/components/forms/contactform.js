@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class ContactForm extends React.Component {
+class ContactForm extends Component {
 	render(){
 		return (
 			<form>
@@ -20,7 +20,6 @@ class ContactForm extends React.Component {
 			</form>
 		)
 	}
-
 }
 
 export default ContactForm;

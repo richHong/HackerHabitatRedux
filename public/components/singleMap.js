@@ -1,5 +1,4 @@
-import React                                 from 'react';
-import ReactDOM                              from 'react-dom';
+import React, { Component }                  from 'react';
 import { connect }                           from 'react-redux';
 import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
 
