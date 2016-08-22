@@ -9,7 +9,7 @@ export default class MyProfile extends Component {
   }
   componentWillMount(){
     let userID = window.localStorage.getItem('userID');
-    fetch('https://lit-harbor-15852.herokuapp.com/v1/listings/'+userID)
+    fetch('/v1/listings/'+userID)
     .then(response => response.json())
     .then(json => {
       this.setState({ favorites: json });
