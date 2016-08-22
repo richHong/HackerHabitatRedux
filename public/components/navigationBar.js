@@ -6,7 +6,7 @@ let loggedIn = function() {
   return !!localStorage.token;
 };
 
-class NavBar extends React.Component {
+class NavBar extends Component {
 
 	render(){
 		return (
