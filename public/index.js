@@ -16,7 +16,7 @@ import SignUp        from './components/containers/signUpContainer';
 import FrontPage     from './components/frontPage';
 import NavBar        from './components/navigationBar';
 import Results       from './components/results';
-import SearchBar     from './components/searchBar';
+import SearchBar     from './components/search';
 import SignOut       from './components/signout';
 import SingleListing from './components/singlelisting';
 
