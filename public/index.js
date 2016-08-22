@@ -54,9 +54,7 @@ var logout = function(nextState, replace) {
             }
         });
     }
-
 };
-
 
 render((
     <Provider store={store}>
