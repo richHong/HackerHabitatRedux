@@ -98,13 +98,14 @@ class ProfileForm extends Component {
           <form 
             id="avatarForm">
             <label>Upload Avatar:</label>
-            <br/><br/>
+            <br/>
             <input 
               type='file' 
               name='file' 
               className='fileUpload'
               ref={ input => this.avatar = input } />
           </form>
+          <br/>
           <form 
             id="avatarForm" 
             onSubmit={ e => this.submit(e, this.avatar, this.firstName, this.lastName, this.description, this.hometown, this.occupation, this.general, this.tech) }>
