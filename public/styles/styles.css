@@ -140,6 +140,7 @@ video {
 }
 .title {
   color:#43D1AF;
+  font-size: 1.5em;
 }
 .filter {
     z-index: 100;
