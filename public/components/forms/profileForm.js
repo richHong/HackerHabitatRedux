@@ -147,8 +147,10 @@ class ProfileForm extends Component {
               ref={input => this.occupation = input} />
             <br/><br/>
 
-            <label>General Interests:</label>
-            <br/><br/>
+            <label>
+              General Interests:
+            </label>
+            <br/>
             <input type='text'ref={input => this.general = input} />
             <br/>
             <div>
@@ -170,7 +172,7 @@ class ProfileForm extends Component {
               id="techInterests">
               Tech Interests:
             </label>
-            <br/><br/>
+            <br/>
             <input 
               type='text'
               ref={input => this.tech = input} />
