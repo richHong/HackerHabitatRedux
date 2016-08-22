@@ -252,7 +252,7 @@ class HousingForm extends Component {
               <input 
                 type='text'
                 ref={ input => this.amenities = input }/>
-              <br/>
+        
               <div>
                 {this.state.amenitiesArray.map((value, i) => {
                 return (
@@ -266,7 +266,7 @@ class HousingForm extends Component {
                   </div>
                   )
               })}
-              </div><br/><br/><br/>
+              </div><br/><br/><br/><br/>
           </form>
 
             <form id='pic1Form'>
@@ -281,7 +281,7 @@ class HousingForm extends Component {
 
             <form id='pic2Form'>
               <label>Upload Picture 2:</label>
-              <br/>
+              <br/><br/>
               <input 
                 type='file' 
                 name='file' 
@@ -291,7 +291,7 @@ class HousingForm extends Component {
 
             <form id='pic3Form'>
               <label>Upload Picture 3:</label>
-              <br/>
+              <br/><br/>
               <input 
                 type='file' 
                 name='file' 
@@ -301,7 +301,7 @@ class HousingForm extends Component {
 
             <form id='pic4Form'>
               <label>Upload Picture 4:</label>
-              <br/>
+              <br/><br/><br/>
               <input 
                 type='file' 
                 name='file' 
@@ -311,7 +311,7 @@ class HousingForm extends Component {
 
             <form id='pic5Form'>
               <label>Upload Picture 5:</label>
-              <br/>
+              <br/><br/>
               <input 
                 type='file' 
                 name='file' 

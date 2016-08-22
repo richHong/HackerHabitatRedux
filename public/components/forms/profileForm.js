@@ -152,7 +152,7 @@ class ProfileForm extends Component {
             </label>
             <br/>
             <input type='text'ref={input => this.general = input} />
-            <br/>
+        
             <div>
               { this.state.genInterests.map((value, i) => {
                 return (
@@ -172,7 +172,7 @@ class ProfileForm extends Component {
               id="techInterests">
               Tech Interests:
             </label>
-            <br/>
+        
             <input 
               type='text'
               ref={input => this.tech = input} />
