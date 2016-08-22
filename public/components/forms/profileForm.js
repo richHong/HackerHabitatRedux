@@ -98,7 +98,7 @@ class ProfileForm extends Component {
           <form 
             id="avatarForm">
             <label>Upload Avatar:</label>
-            <br/>
+            <br/><br/>
             <input 
               type='file' 
               name='file' 
