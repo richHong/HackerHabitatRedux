@@ -107,7 +107,6 @@ exports.getAllUsers = function(req, res, next) {
 
 exports.checkAuth = function(req, res, next){
   var token = req.headers['x-access-token'];
-  console.log('This is the token', token);
     if (!token) {
       next(new Error('No token'));
     } else {
@@ -116,7 +115,7 @@ exports.checkAuth = function(req, res, next){
       findUser({username: user.username})
         .then(function (foundUser) {
           if (foundUser) {
-            next(req, res);
+            next();
           } else {
             res.send(401);
           }

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "postinstall": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors"
+    "postinstall": "NODE_ENV=production webpack --config ./webpack.production.config.js --progress --colors",
+    "test": "mocha --compilers js:babel-register --recursive",
+    "test:watch": "npm test -- --watch"
   },
   "repository": {
     "type": "git",

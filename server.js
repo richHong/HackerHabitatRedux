@@ -33,7 +33,7 @@ app.use(favicon(__dirname + '/public/assets/black-house.ico'));
 require('./server/S3ListingsMiddleware.js')(app);
 require('./server/S3AvatarMiddleware.js')(app);
 
-mongoose.connect('mongodb://hacker:habitat@ds153785.mlab.com:53785/heroku_nnwfnw1w');
+mongoose.connect(process.env.mongoURI);
 
 app.route('/email')
    .post(function(req, res, err) {
