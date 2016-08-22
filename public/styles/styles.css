@@ -269,10 +269,10 @@ video {
   float: left;
 }
 #avatarForm {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .listingForm {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .avatar {
   border-radius: 50%;
@@ -283,7 +283,7 @@ video {
   height: 100%;
   float: left;
   background-color: #43D1AF;
-  font-size: 1.4em;
+  font-size: 1em;
 }
 .profileContainer {
   float: left;
@@ -303,7 +303,7 @@ video {
 .singleListing{
   text-decoration: none;
   color: black;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .singleListing:hover {
   text-decoration: none;
@@ -318,13 +318,13 @@ video {
   width: 40%;
   overflow: scroll;
   background-color: #43D1AF;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .contactHouse {
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .houseName {
-  font-size: 2.0em;
+  font-size: 1.5em;
 }
 .signout {
   text-align: center;

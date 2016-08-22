@@ -34,7 +34,7 @@ class SingleListing extends Component {
     };
   }
   componentWillMount(){
-      fetch('https://lit-harbor-15852.herokuapp.com/v1/listings/house/'+this.props.params.house_name)
+      fetch('/v1/listings/house/'+this.props.params.house_name)
       .then(results => results.json())
       .then(json => {
         this.setState({listing:json});
@@ -109,7 +109,7 @@ class SingleListing extends Component {
       let message = this.message.value
       let userID = window.localStorage.getItem('userID');
 
-      fetch('https://lit-harbor-15852.herokuapp.com/v1/users/' + userID)
+      fetch('/v1/users/' + userID)
       .then(response => response.json())
       .then(json => {
         if(json){
@@ -124,7 +124,7 @@ class SingleListing extends Component {
         }
       })
       .then(() => { 
-        fetch('https://lit-harbor-15852.herokuapp.com/email', {
+        fetch('/email', {
           method: 'POST',
           headers: {'content-type': 'application/json'},
           body: JSON.stringify({personalizations: [{to: [{email: receiver}]}],from: {email: sender},subject: username + " is interested in " + listing + " on Hacker Habitat" ,content: [{type: "text/plain", value: message}]})
