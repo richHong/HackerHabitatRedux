@@ -1,6 +1,6 @@
 import React, { Component }     from 'react';
 import { Link }  								from 'react-router';
-import SearchBar 								from './sasdearchBar';
+import SearchBar 								from './searchBar';
 
 let loggedIn = function() {
   return !!localStorage.token;
