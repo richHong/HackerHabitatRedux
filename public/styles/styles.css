@@ -148,7 +148,7 @@ video {
     width: 100%;
 }
 .frontPageDescription {
-  font-size: 1.3em;
+  font-size: 1em;
 }
 .overlay {
   position:absolute;
@@ -158,9 +158,9 @@ video {
   color: white;
   padding: 2rem;
   width: 45%;
-  margin:2rem;
+  margin: 2rem;
   float: right;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 .form-style-6 {
     max-width: 600px;
