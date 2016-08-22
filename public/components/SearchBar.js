@@ -4,7 +4,7 @@ import { connect }                                                          from
 import { getHouseAction }                                                   from '../actions/houseActions';
 import { Router, Route, hashHistory, browserHistory, Link }                 from 'react-router';
 
-class SearchBar extends React.Component {
+class SearchBar extends Component {
 	render(){
 		return (
 			<div className='searchDiv'>
