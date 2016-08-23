@@ -22,7 +22,7 @@ for tech-minded people to find hacker houses and live-work spaces for long- and 
 
 ## Usage
 
-Visit https://hackerhabitat.org
+Visit https://hackerhabitatredux.herokuapp.com
 
 ## Requirements
 
