@@ -8,8 +8,11 @@ export default class MyProfile extends Component {
     this.state = {};
   }
   componentWillMount(){
+
     let userID = window.localStorage.getItem('userID');
-    fetch('/v1/listings/'+userID)
+    let authToken = window.localStorage.getItem('token');
+    
+    fetch('/v1/listings/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
       this.setState({ favorites: json });
