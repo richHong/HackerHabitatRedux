@@ -43,6 +43,7 @@ class SignUpForm extends Component {
 	    if (password.length >= 5) {
 	        if (password === this.confirmPassword.value) {
 	            if (this.email.value.indexOf("@") > -1 && this.email.value.indexOf(".") > -1) {
+	            	
 	                fetch('/v1/users/', {
 	                        method: 'POST',
 	                        headers: {

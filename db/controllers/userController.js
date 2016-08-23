@@ -1,6 +1,7 @@
 var userModel = require('../models/userModel.js'),
     Q = require('q'),
-    jwt  = require('jwt-simple');
+    jwt  = require('jwt-simple'),
+    url = require('url');
 
 exports.signUpUser = function(req, res, next) {
   var username  = req.body.username,
@@ -106,12 +107,16 @@ exports.getAllUsers = function(req, res, next) {
 };
 
 exports.checkAuth = function(req, res, next){
-  var token = req.headers['x-access-token'];
+  
+  var queryData = url.parse(req.url, true).query;
+  var token = queryData.access_token;
+
     if (!token) {
       next(new Error('No token'));
     } else {
       var user = jwt.decode(token, 'secret');
-      var findUser = Q.nbind(User.findOne, User);
+     
+      var findUser = Q.nbind(userModel.findOne, userModel);
       findUser({username: user.username})
         .then(function (foundUser) {
           if (foundUser) {

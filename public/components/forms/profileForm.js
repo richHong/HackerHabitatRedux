@@ -60,7 +60,7 @@ class ProfileForm extends Component {
       .then(response => console.log(response));
     }
 
-    fetch('/v1/users/' + userID)
+    fetch('/v1/users/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
         my_firstname = ifNotEmptyChangeTo(firstName.value, json.first_name);

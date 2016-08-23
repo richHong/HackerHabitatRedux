@@ -5,7 +5,9 @@ class SignInForm extends Component {
 
 handleSubmit(e, username, password) {
     e.preventDefault();
+    
     let successLogIn = false;
+
     fetch('/v1/users/signin', {
             method: 'POST',
             headers: {

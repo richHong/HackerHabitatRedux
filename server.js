@@ -63,14 +63,13 @@ app.route('/v1/users/:userId')
 
 app.route('/v1/listings')
     .get(ListingController.getAllListings)
-    .post(ListingController.createListing);
+    .post(UserController.checkAuth, ListingController.createListing);
 
-app.get('/v1/listings/:userId', ListingController.getListingsById);
+app.get('/v1/listings/:userId', UserController.checkAuth, ListingController.getListingsById);
  
 app.get('/v1/listings/city/:city', ListingController.getListingsByCity);
 
 app.get('/v1/listings/house/:house_name', ListingController.getListingsByName);
-
 
 //server/compiler.js runs webpack-dev-server which creates the bundle.js which index.html serves
 //will not see a physical bundle.js because webpack-dev-server runs it from memory
