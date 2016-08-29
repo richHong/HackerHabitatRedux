@@ -11,7 +11,10 @@ var express = require('express'),
     helmet = require('helmet'),
     fetch = require('isomorphic-fetch'),
     mongoose = require('mongoose');
-    // config = require('./config.js');
+
+if (!isProduction){
+    var config = require('./config.js');
+}
 
 var UserController = require('./db/controllers/userController.js'),
     ListingController = require('./db/controllers/listingController.js');

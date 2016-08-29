@@ -8,7 +8,7 @@ class Results extends Component {
  render(){
     return (
       <div>
-        { this.props.listings ? <HouseListOfListings houses={ this.props.listings } /> : null }
+        { this.props.listings ? <HouseListOfListings houses={ this.props.listings } /> : 'No Results' }
         <GMaps />
       </div>
     )
