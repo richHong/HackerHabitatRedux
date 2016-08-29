@@ -14,11 +14,9 @@ class Results extends Component {
     )
   }
 }
-
 function mapStateToProps(state) {
  return {
     listings: state.listings.searchResults
   }
 }
-
 export default connect(mapStateToProps)(Results);

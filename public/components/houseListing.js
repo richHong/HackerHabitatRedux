@@ -13,7 +13,7 @@ class HouseListing extends Component {
     <div className='listingBorder'>     
         <Link 
             className='singleListing' 
-            to={ "/singlelisting/"+this.props.house.house_name }
+            to={ '/singlelisting/'+this.props.house.house_name }
             onClick={ this.getSingleListing.bind(this) }>
             <img 
                 className='housePic' 
@@ -45,6 +45,5 @@ class HouseListing extends Component {
 function mapDispatchToProps(dispatch) {
 	return bindActionCreators({singleListingAction}, dispatch)
 }
-
 export default connect(null, mapDispatchToProps)(HouseListing);
 

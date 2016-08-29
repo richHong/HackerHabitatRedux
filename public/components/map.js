@@ -58,5 +58,4 @@ function mapStateToProps(state) {
       listings: state.listings.searchResults
     }
 }
-
 export default connect(mapStateToProps)(GMaps)

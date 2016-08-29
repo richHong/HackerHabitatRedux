@@ -7,7 +7,6 @@ let loggedIn = function() {
 };
 
 class NavBar extends Component {
-
 	render(){
 		return (
 			<ul className='nav'>
@@ -81,5 +80,4 @@ class NavBar extends Component {
     );
 	}
 }
-
 export default NavBar;

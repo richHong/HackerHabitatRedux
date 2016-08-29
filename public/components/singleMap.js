@@ -1,9 +1,9 @@
 import React, { Component }                  from 'react';
 import { connect }                           from 'react-redux';
 import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
-import * as config                           from '../../config'
+import * as config                           from '../../config';
 
-class SingleGMaps extends React.Component {
+class SingleGMaps extends Component {
   constructor(props){
     super(props);
   }
@@ -50,5 +50,4 @@ function mapStateToProps(state) {
     listing: state.listings.singleListing
   }
 };
-
 export default connect(mapStateToProps)(SingleGMaps);

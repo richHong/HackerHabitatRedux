@@ -11,5 +11,4 @@ class MainContain extends Component {
 		)
 	}
 }
-
 export default MainContain;

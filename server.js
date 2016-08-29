@@ -41,10 +41,10 @@ app.route('/email')
         fetch("https://api.sendgrid.com/v3/mail/send", {
             "method": "POST",
             "headers": {
-                "authorization": "Bearer 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",
+                "authorization": process.env.sendgridAuth || config.sendgridAuth,
                 "content-type": "application/json",
                 "cache-control": "no-cache",
-                "postman-token": "d1d73c00-90fc-fcb0-1246-d7f416a65443"
+                "postman-token": process.env.sendgridToken || config.sendgridToken
             },
             "body": JSON.stringify(req.body)
     }).then((response, req) => {

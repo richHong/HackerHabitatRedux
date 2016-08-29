@@ -75,7 +75,7 @@ class SingleListing extends Component {
           <b><i>Primary Member:</i></b> { this.props.listing ? this.props.listing.primary_member : this.state.listing.primary_member } <br /><br />
 
           <form>
-            <h4 className="contactHouse">
+            <h4 className='contactHouse'>
               <b>Contact { this.props.listing ? this.props.listing.house_name : this.state.listing.house_name }:</b>
             </h4>
             <label>Your Message:</label>
@@ -85,11 +85,13 @@ class SingleListing extends Component {
               ref={ (message) => this.message = message }>
             </textarea>
             <br/>
-            <input 
+            <button
+              className='form-style-6'
               name='message' 
               type='submit' 
               onClick={ this.onSendMessage.bind(this) } 
-              value='Send'/>
+              >Send
+            </button>
           </form>
 
         </div>
@@ -98,51 +100,48 @@ class SingleListing extends Component {
 
 			</div>
 	}
+  onSendMessage(e){
+    e.preventDefault();
+    let sender,
+        receiver,
+        username,
+        listing = "no name",
+        message = this.message.value,
+        userID = window.localStorage.getItem('userID');
 
-    onSendMessage(e){
-      e.preventDefault();
-
-      let sender,
-          receiver,
-          username,
-          listing = "no name",
-          message = this.message.value,
-          userID = window.localStorage.getItem('userID');
-
-      fetch('/v1/users/' + userID)
-      .then(response => response.json())
-      .then(json => {
-        if(json){
-          username = json.username
-          sender = json.email
-        } else {
-          alert("You Must Be Signed in to send a message")
-        }
-        receiver = this.props.listing.user.email || this.state.user.email
-        if(this.props.listing.house_name || this.state.house_name){
-          listing = this.props.listing.house_name || this.state.house_name
-        }
-      })
-      .then(() => { 
-        fetch('/email', {
-          method: 'POST',
-          headers: {'content-type': 'application/json'},
-          body: JSON.stringify({personalizations: [{to: [{email: receiver}]}],from: {email: sender},subject: username + " is interested in " + listing + " on Hacker Habitat" ,content: [{type: "text/plain", value: message}]})
-        }).then(res => {
-        if(res.status === 202){
-          alert("Your Message was Sent")
-        } else {
-          alert("Your Message Could Not Be Sent")
-        }
-      })
+    fetch('/v1/users/' + userID)
+    .then(response => response.json())
+    .then(json => {
+      if(json){
+        username = json.username
+        sender = json.email
+      } else {
+        alert("You Must Be Signed in to send a message")
+      }
+      receiver = this.props.listing.user.email || this.state.user.email
+      if(this.props.listing.house_name || this.state.house_name){
+        listing = this.props.listing.house_name || this.state.house_name
+      }
     })
+    .then(() => { 
+      fetch('/email', {
+        method: 'POST',
+        headers: {'content-type': 'application/json'},
+        body: JSON.stringify({personalizations: [{to: [{email: receiver}]}],from: {email: sender},subject: username + " is interested in " + listing + " on Hacker Habitat" ,content: [{type: "text/plain", value: message}]})
+      })
+      .then(res => {
+      if(res.status === 202){
+        alert("Your Message was Sent")
+      } else {
+        alert("Your Message Could Not Be Sent")
+      }
+      })
+    });
   }
 }
-
 function mapStateToProps(state) {
   return {
     listing: state.listings.singleListing
   }
 }
-
 export default connect(mapStateToProps)(SingleListing);

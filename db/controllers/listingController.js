@@ -3,11 +3,9 @@ var listingModel = require('../models/listingModel.js'),
 
 exports.getAllListings = function(req, res, next) {
   var find = Q.nbind(listingModel.find, listingModel);
-
   find(function(houses){
     res.send(houses);
   });
-
 };
 
 exports.createListing = function(req, res, next) {
