@@ -9,10 +9,9 @@ function ifNotEmptyChangeTo (currentValue, previousValue) {
 class ProfileForm extends Component {
   constructor(props){
     super(props);
-
     this.state = {
       genInterests:['Music', 'Movies', 'Books', 'Fashion', 'Outdoors', 'Sports', 'Crafting', 'Gaming', 'Cycling', 'Running', 'Camping', 'Festivals', 'Cooking'],
-      techInterests: ['Javascript','Ruby', 'Node', 'React', 'Angular', 'Express', 'MongoDB', 'Postgres','Redux', 'PHP', 'Python', 'C++', 'C#', 'Neo4J', 'iOS', 'Android', 'Java'],
+      techInterests: ['Javascript','Ruby', 'Node', 'React', 'Angular', 'Express', 'MongoDB', 'PostgreSQL', 'MySQL', 'Redux', 'PHP', 'Python', 'C++', 'C#', 'Neo4J', 'iOS', 'Android', 'Java'],
       general:[],
       tech:[]
     };
@@ -41,14 +40,15 @@ class ProfileForm extends Component {
   submit(e, avatar, firstName, lastName, description, hometown, occupation, general, tech){
     e.preventDefault();
     
-    let authToken = window.localStorage.getItem('token');
-    let userID = window.localStorage.getItem('userID');
-    let avatarName;
-    let my_firstname;
-    let my_lastname;
-    let my_hometown;
-    let my_description;
-    let my_occupation;
+    let authToken = window.localStorage.getItem('token'),
+        userID = window.localStorage.getItem('userID');
+
+    let avatarName,
+        my_firstname,
+        my_lastname,
+        my_hometown,
+        my_description,
+        my_occupation;
 
     if (avatar.value === ''){
       avatarName = avatar.value;

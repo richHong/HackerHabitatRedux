@@ -37,33 +37,32 @@ class SignUpForm extends Component {
 	submitForm(e) {
 	    e.preventDefault()
 
-	    let username = this.username.value.toLowerCase();
-	    let password = this.password.value;
+	    let username = this.username.value.toLowerCase(),
+	    		password = this.password.value;
 	    
 	    if (password.length >= 5) {
 	        if (password === this.confirmPassword.value) {
 	            if (this.email.value.indexOf("@") > -1 && this.email.value.indexOf(".") > -1) {
 	            	
-	                fetch('/v1/users/', {
-	                        method: 'POST',
-	                        headers: {
-	                            'Content-Type': 'application/json'
-	                        },
-	                        body: JSON.stringify({
-	                            username: username,
-	                            password: password,
-	                            email: this.email.value
-	                        })
-	                    })
-	                    .then(response => response.json())
-	                    .then(data => {
-	                    	console.log('This data', data)
-                        window.localStorage.setItem('token', data.token);
-                        window.localStorage.setItem('userID', data.user_id);
-                        window.localStorage.setItem('i', data.id);
-												window.location = '#/createProfile';
+                fetch('/v1/users/', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json'
+                  },
+                  body: JSON.stringify({
+                      username: username,
+                      password: password,
+                      email: this.email.value
+                	})
+                })
+                .then(response => response.json())
+                .then(data => {
+                	console.log('This data', data)
+                  window.localStorage.setItem('token', data.token);
+                  window.localStorage.setItem('userID', data.user_id);
+                  window.localStorage.setItem('i', data.id);
+									window.location = '#/createProfile';
             });
-
 	            } else {
 	            	alert('Error creating account')
 	            }
@@ -71,5 +70,4 @@ class SignUpForm extends Component {
 			}
 	}
 }
-
-export default SignUpForm
+export default SignUpForm;

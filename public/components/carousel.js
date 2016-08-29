@@ -1,5 +1,5 @@
 import React, { Component }                        from 'react';
-import { Carousel, CarouselItem, CarouselCaption } from 'react-bootstrap';
+import { Carousel, CarouselItem, CarouselCaption, Image } from 'react-bootstrap';
 import { connect }                               from 'react-redux';
 
 class MyCarousel extends Component {
@@ -27,22 +27,25 @@ class MyCarousel extends Component {
         images.push(this.props.listing.pic5);
       }
       if(!this.props.listing.pic1){
-        images.push('http://freedesignfile.com/upload/2016/03/House-architecture-blueprint-vector-set-03.jpg');
+        images.push('http://assets.inhabitat.com/files/2010/01/interloop-stock.jpg');
+      }
+      if(!this.props.listing.pic2){
+        images.push('http://i.istockimg.com/file_thumbview_approve/88947009/6/stock-photo-88947009-swimming-pool-mit-apartment-houses-in-the-background.jpg');
       }
     }
       this.setState({images});
   }
   render() {
     return (
-      <Carousel>
+      <Carousel
+        interval={3000}>
         {this.state.images.map((img, i) => {
           return (
           <CarouselItem 
             key ={ i }>
-            <img 
-              className='carouselImage' 
-              height={ 500 } 
-              width={ 700 } 
+            <Image
+              className='carouselImage'
+              responsive
               src={ img } />
           </CarouselItem>
           )

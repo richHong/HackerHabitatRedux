@@ -21,5 +21,4 @@ class ContactForm extends Component {
 		)
 	}
 }
-
 export default ContactForm;

@@ -2,6 +2,15 @@ import React, { Component }                           from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import Axios                                          from 'axios';
 
+function formatDate (date){
+  var dateArray = date.split('-');
+  var temp = dateArray[0];
+  dateArray[0] = dateArray[1];
+  dateArray[1] = dateArray[2];
+  dateArray[2] = temp;
+  return dateArray.join('-');
+};
+
 class HousingForm extends Component {
   constructor(props){
     super(props);
@@ -36,14 +45,14 @@ class HousingForm extends Component {
   submit(e, name, heading, street, city, state, zipCode, price, dateStart, dateEnd, interests, mission, rules, vacancies, primary, amenities, pic1, pic2, pic3, pic4, pic5){
     e.preventDefault();
 
-    let geolocation;
-    let authToken = window.localStorage.getItem('token');
+    let geolocation,
+        authToken = window.localStorage.getItem('token');
 
-    let pic1Name;
-    let pic2Name;
-    let pic3Name;
-    let pic4Name;
-    let pic5Name;
+    let pic1Name,
+        pic2Name,
+        pic3Name,
+        pic4Name,
+        pic5Name;
 
     if (pic1.value === ''){
       pic1Name = pic1.value;
@@ -108,7 +117,7 @@ class HousingForm extends Component {
             state: state.value,
             zipcode: zipCode.value,
             price: price.value,
-            dates_avail: dateStart.value+' to '+dateEnd.value,
+            dates_avail: formatDate(dateStart.value)+' to '+formateDate(dateEnd.value),
             house_interests: interests.value+this.state.houseInterests,
             house_mission: mission.value,
             house_rules: rules.value,
@@ -329,5 +338,4 @@ class HousingForm extends Component {
       )
   }
 }
-
 export default HousingForm;

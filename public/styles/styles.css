@@ -119,6 +119,7 @@ video {
   display: block;
   height: 2vh;
   margin-right: 5px;
+  font-size: 2.5vh;
 }
 .logo {
   display: inline-block;
@@ -140,13 +141,13 @@ video {
 }
 .title {
   color:#43D1AF;
-  font-size: 4vh;
+  font-size: 4.5vh;
 }
 .filter {
-    z-index: 100;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    width: 100%;
+  z-index: 100;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
 }
 .frontPageDescription {
   font-size: 3vh;
@@ -165,19 +166,19 @@ video {
   top: 14vh;
 }
 .form-style-6 {
-    max-width: 600px;
-    margin: 10px auto;
-    padding: 16px;
-    background: #F7F7F7;
+  max-width: 600px;
+  margin: 10px auto;
+  padding: 16px;
+  background: #F7F7F7;
 }
 .form-style-6 h1{
-    background: #43D1AF;
-    padding: 20px 0;
-    font-size: 5vh;
-    font-weight: 300;
-    text-align: center;
-    color: #333;
-    margin: -16px -16px 16px -16px;
+  background: #43D1AF;
+  padding: 20px 0;
+  font-size: 5vh;
+  font-weight: 300;
+  text-align: center;
+  color: #333;
+  margin: -16px -16px 16px -16px;
 }
 .form-style-6 input[type="text"],
 .form-style-6 input[type="date"],
@@ -191,20 +192,20 @@ video {
 .form-style-6 textarea,
 .form-style-6 select
 {
-    -webkit-transition: all 0.30s ease-in-out;
-    -moz-transition: all 0.30s ease-in-out;
-    -ms-transition: all 0.30s ease-in-out;
-    -o-transition: all 0.30s ease-in-out;
-    outline: none;
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    background: #fff;
-    margin-bottom: 4%;
-    border: 1px solid #ccc;
-    padding: 3%;
-    color: #555;
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  background: #fff;
+  margin-bottom: 4%;
+  border: 1px solid #ccc;
+  padding: 3%;
+  color: #555;
 }
 .form-style-6 input[type="text"]:focus,
 .form-style-6 input[type="date"]:focus,
@@ -218,31 +219,28 @@ video {
 .form-style-6 textarea:focus,
 .form-style-6 select:focus
 {
-    box-shadow: 0 0 5px #43D1AF;
-    padding: 3%;
-    border: 1px solid #43D1AF;
+  box-shadow: 0 0 5px #43D1AF;
+  padding: 3%;
+  border: 1px solid #43D1AF;
 }
 
 .form-style-6 input[type="submit"],
 .form-style-6 input[type="button"]{
-    box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    width: 100%;
-    padding: 3%;
-    background: #43D1AF;
-    border-bottom: 2px solid #30C29E;
-    border-top-style: none;
-    border-right-style: none;
-    border-left-style: none;
-    color: #333;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  width: 100%;
+  padding: 3%;
+  background: #43D1AF;
+  border-bottom: 2px solid #30C29E;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  color: #333;
 }
 .form-style-6 input[type="submit"]:hover,
 .form-style-6 input[type="button"]:hover{
   background: #2EBC99;
-}
-.fileUpload {
-
 }
 .list {
   float:right;
@@ -260,7 +258,7 @@ video {
 }
 .housePic {
   width: 100%;
-  height: 40vh;
+  height: 50vh;
 }
 .price {
   float:right;
@@ -290,12 +288,6 @@ video {
 .profileContainer {
   float: left;
   width: 28%;
-  height: 100vh;
-  overflow: scroll;
-}
-.instafeed {
-  width: 37%;
-  float: left;
   height: 100vh;
   overflow: scroll;
 }
@@ -346,12 +338,11 @@ video {
   width: 100%;
   float:top;
   background-color: #333;
+  height: 50vh;
+  overflow: hidden;
 }
 .carouselImage {
-  display: block;
   margin: 0 auto;
-  height: 60%;
-  width: 50%;
 }
 .noResults {
   font-size: 5vh;
@@ -364,9 +355,9 @@ video {
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
-  width: 45%;
+  width: 30%;
   margin: 2rem;
-  left: 70vw;
+  left: 65vw;
   top: 20vh;
   font-size: 4vh;
 }
@@ -377,9 +368,9 @@ video {
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
-  width: 45%;
+  width: 30%;
   margin: 2rem;
-  left: 70vw;
+  left: 65vw;
   top: 35vh;
   font-size: 4vh;
 }
@@ -390,9 +381,9 @@ video {
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
-  width: 45%;
+  width: 30%;
   margin: 2rem;
-  left: 70vw;
+  left: 65vw;
   top: 50vh;
   font-size: 4vh;
 }
@@ -403,9 +394,24 @@ video {
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
-  width: 45%;
+  width: 30%;
   margin: 2rem;
-  left: 70vw;
+  left: 65vw;
   top: 65vh;
   font-size: 4vh;
+}
+.sanFrancisco:hover {
+  background-color: rgba(67,209,175,0.3);
+  cursor: pointer;
+  cursor: hand;
+}
+.oakland:hover {
+  background-color: rgba(67,209,175,0.3);
+  cursor: pointer;
+  cursor: hand;
+}
+.sanJose:hover {
+  background-color: rgba(67,209,175,0.3);
+  cursor: pointer;
+  cursor: hand;
 }

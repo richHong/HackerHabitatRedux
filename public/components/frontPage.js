@@ -1,7 +1,18 @@
 import React, { Component } from 'react';
 import NavBar               from './navigationBar';
+import { connect }          from 'react-redux';
+import { getHouseAction }   from '../actions/houseActions';
+import { hashHistory }      from 'react-router';
 
-export default class FrontPage extends Component {
+class FrontPage extends Component {
+  onSubmit(city){
+    fetch('/v1/listings/city/:'+city)
+      .then(response => response.json())
+      .then(json => {
+        this.props.dispatch(getHouseAction(json));
+        hashHistory.push('results');
+      });
+  }
   render() {
     return (
       <div>
@@ -26,12 +37,13 @@ export default class FrontPage extends Component {
             </video>
           </div>
 
-          <div className='destinations'><h1 className="title">Common Destinations:</h1></div>
-          <div className='sanFrancisco'>San Francisco</div>
-          <div className='oakland'>Oakland</div>
-          <div className='sanJose'>San Jose</div>
+          <div className='destinations' ><h1 className="title">Common Destinations:</h1></div>
+          <div className='sanFrancisco' onClick={ () => this.onSubmit('san+francisco') }>San Francisco</div>
+          <div className='oakland' onClick={ () => this.onSubmit('oakland') }>Oakland</div>
+          <div className='sanJose' onClick={ () => this.onSubmit('san+jose') }>San Jose</div>
 
       </div>
     )
   }
 }
+export default connect()(FrontPage);
