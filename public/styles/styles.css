@@ -140,7 +140,7 @@ video {
 }
 .title {
   color:#43D1AF;
-  font-size: 5vh;
+  font-size: 4vh;
 }
 .filter {
     z-index: 100;
@@ -162,6 +162,7 @@ video {
   margin: 2rem;
   float: right;
   font-size: 5vh;
+  top: 14vh;
 }
 .form-style-6 {
     max-width: 600px;
@@ -355,4 +356,56 @@ video {
 .noResults {
   font-size: 5vh;
   text-align: center;
+}
+.destinations {
+  position:absolute;
+  z-index:300000;
+  font-weight:100;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 45%;
+  margin: 2rem;
+  left: 70vw;
+  top: 20vh;
+  font-size: 4vh;
+}
+.sanFrancisco {
+  position:absolute;
+  z-index:300000;
+  font-weight:100;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 45%;
+  margin: 2rem;
+  left: 70vw;
+  top: 35vh;
+  font-size: 4vh;
+}
+.oakland {
+  position:absolute;
+  z-index:300000;
+  font-weight:100;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 45%;
+  margin: 2rem;
+  left: 70vw;
+  top: 50vh;
+  font-size: 4vh;
+}
+.sanJose {
+  position:absolute;
+  z-index:300000;
+  font-weight:100;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 45%;
+  margin: 2rem;
+  left: 70vw;
+  top: 65vh;
+  font-size: 4vh;
 }

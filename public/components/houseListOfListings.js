@@ -3,11 +3,10 @@ import HouseListing         from './houseListing';
 import { Link }             from 'react-router';
 
 class HouseList extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
   }
-  render(){
-    console.log(this.props.houses)
+  render() {
     return (
     <div className='list'>
       <div className='listHeading'><b>{ this.props.page === 'profile' ? 'Your Hacker Houses' : ' Search Results'}</b></div>
