@@ -14,7 +14,7 @@ class HouseList extends Component {
         return <HouseListing 
                   house={ house } 
                   key={ i } />
-      }) : null}
+      }) : (<div> No Results </div>)}
     </div>
     )
   }
