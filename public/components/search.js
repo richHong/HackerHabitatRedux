@@ -26,7 +26,7 @@ class SearchBar extends Component {
             ref={ (input) => this.search = input } 
             className='searchbox' />
           <img 
-            onClick={this.onSubmit.bind(this)} 
+            onClick={ this.onSubmit.bind(this) } 
             className='magnify searchbutton'
             src='https://cdn2.iconfinder.com/data/icons/picons-basic-1/57/basic1-016_search_zoom_find-512.png'/>
         </form>
@@ -35,12 +35,7 @@ class SearchBar extends Component {
   }
 }
 function mapDispatchToProps(dispatch) {
-	return bindActionCreators({ getHouseAction: getHouseAction }, dispatch)
-}
-function mapStateToProps(state){
-  return {
-    listing: state.listings
-  }
+	return bindActionCreators({ getHouseAction }, dispatch)
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)
+export default connect(null, mapDispatchToProps)(SearchBar)

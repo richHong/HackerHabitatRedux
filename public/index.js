@@ -4,7 +4,7 @@ import { render }                                     from 'react-dom';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import { createStore }                                from 'redux';
 import { Provider }                                   from 'react-redux';
-import "isomorphic-fetch";
+import 'isomorphic-fetch';
 
 import CreateProfile from './components/containers/createProfileContainer';
 import CreateHouse   from './components/containers/createHouseContainer';

@@ -37,7 +37,7 @@ class SingleListing extends Component {
       fetch('/v1/listings/house/'+this.props.params.house_name)
       .then(results => results.json())
       .then(json => {
-        this.setState({listing:json});
+        this.setState({ listing: json });
       });
   }
 	render(){
@@ -102,12 +102,12 @@ class SingleListing extends Component {
     onSendMessage(e){
       e.preventDefault();
 
-      let sender;
-      let receiver;
-      let username;
-      let listing = "no name"
-      let message = this.message.value
-      let userID = window.localStorage.getItem('userID');
+      let sender,
+          receiver,
+          username,
+          listing = "no name",
+          message = this.message.value,
+          userID = window.localStorage.getItem('userID');
 
       fetch('/v1/users/' + userID)
       .then(response => response.json())

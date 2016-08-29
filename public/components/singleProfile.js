@@ -6,7 +6,6 @@ export default class singleProfile extends Component {
     this.state = {};
   }
   componentDidMount(){
-
     let authToken = window.localStorage.getItem('token');
     let userID = window.localStorage.getItem('userID');
 
@@ -38,7 +37,6 @@ export default class singleProfile extends Component {
               <span><b><i>Tech Interests:</i></b> { this.state.tech_interests ?this.state.tech_interests.split(',').map((interest, i) => <span key={i} >{ interest }, </span>) : null }</span><br /><br />
             </div>
             : null }
-
           </div>
         </div>
       </div>

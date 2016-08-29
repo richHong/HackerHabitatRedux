@@ -1,11 +1,10 @@
-import React        from 'react';
-import HouseListing from './houseListing';
-import { Link }     from 'react-router';
+import React, { Component } from 'react';
+import HouseListing         from './houseListing';
+import { Link }             from 'react-router';
 
-class HouseList extends React.Component {
+class HouseList extends Component {
   constructor(props){
     super(props);
-
   }
   render(){
     return (

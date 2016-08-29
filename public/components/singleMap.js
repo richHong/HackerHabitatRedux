@@ -1,6 +1,7 @@
 import React, { Component }                  from 'react';
 import { connect }                           from 'react-redux';
 import { Gmaps, Marker, InfoWindow, Circle } from 'react-gmaps';
+import * as config                           from '../../config'
 
 class SingleGMaps extends React.Component {
   constructor(props){
@@ -27,7 +28,7 @@ class SingleGMaps extends React.Component {
         lng={ this.props.listing ? this.props.listing.lng : -122.2695097 }
         zoom={ 16 }
         loadingMessage={ 'Loading' }
-        params={ {v: '3.exp', key: 'AIzaSyAMUWIppT-jbjMztrR6tWSV7Y58jTZi2Sw'} }
+        params={ {v: '3.exp', key: process.env.googleMapKey || config.googleMapKey} }
         onMapCreated={ this.onMapCreated }>
         { this.props.listing ?
           <Marker

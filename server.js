@@ -10,7 +10,8 @@ var express = require('express'),
     multiparty = require('connect-multiparty'),
     helmet = require('helmet'),
     fetch = require('isomorphic-fetch'),
-    mongoose = require('mongoose');
+    mongoose = require('mongoose'),
+    config = require('./config.js');
 
 var UserController = require('./db/controllers/userController.js'),
     ListingController = require('./db/controllers/listingController.js');
@@ -33,7 +34,7 @@ app.use(favicon(__dirname + '/public/assets/black-house.ico'));
 require('./server/S3ListingsMiddleware.js')(app);
 require('./server/S3AvatarMiddleware.js')(app);
 
-mongoose.connect(process.env.mongoURI);
+mongoose.connect(process.env.mongoURI || config.mongo_URI);
 
 app.route('/email')
    .post(function(req, res, err) {

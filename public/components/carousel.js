@@ -30,7 +30,7 @@ class MyCarousel extends Component {
         images.push('http://freedesignfile.com/upload/2016/03/House-architecture-blueprint-vector-set-03.jpg');
       }
     }
-      this.setState({images: images});
+      this.setState({images});
   }
   render() {
     return (

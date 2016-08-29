@@ -3,6 +3,7 @@ import { connect }                                                          from
 import { Gmaps, Marker, InfoWindow, Circle }                                from 'react-gmaps';
 import { createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
 import { singleListingAction }                                              from '../actions/houseActions';
+import * as config                                                          from '../../config';
 
 class GMaps extends React.Component {
   constructor(props){
@@ -29,7 +30,7 @@ class GMaps extends React.Component {
         lng={ (this.props.listings.length > 0) ? this.props.listings[0].lng : -122.2695097 }
         zoom={ 13 }
         loadingMessage={ 'Loading...' }
-        params={ {v: '3.exp', key: 'AIzaSyAMUWIppT-jbjMztrR6tWSV7Y58jTZi2Sw'} }
+        params={ {v: '3.exp', key: process.env.googleMapKey || config.googleMapKey} }
         onMapCreated={ this.onMapCreated }>
         { (this.props.listings.length > 0) ? this.props.listings.map((house, i) => {
           return (
@@ -52,14 +53,10 @@ class GMaps extends React.Component {
       );
   }
 }
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ singleListingAction: singleListingAction }, dispatch)
-}
 function mapStateToProps(state) {
     return {
-      listings: state.listings.searchResults,
-      singlelisting: state
+      listings: state.listings.searchResults
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(GMaps)
+export default connect(mapStateToProps)(GMaps)
