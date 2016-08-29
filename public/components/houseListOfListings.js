@@ -7,14 +7,15 @@ class HouseList extends Component {
     super(props);
   }
   render(){
+    console.log(this.props.houses)
     return (
     <div className='list'>
       <div className='listHeading'><b>{ this.props.page === 'profile' ? 'Your Hacker Houses' : ' Search Results'}</b></div>
-      {Array.isArray(this.props.houses) ? this.props.houses.map((house, i) => {
+      { this.props.houses.length > 0 ? this.props.houses.map((house, i) => {
         return <HouseListing 
                   house={ house } 
                   key={ i } />
-      }) : null}
+      }) : <div className='noResults'>No Results</div>}
     </div>
     )
   }

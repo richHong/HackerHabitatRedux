@@ -3,7 +3,6 @@ import { connect }                                                          from
 import { Gmaps, Marker, InfoWindow, Circle }                                from 'react-gmaps';
 import { createStore, combineReducers, applyMiddleware, bindActionCreators} from 'redux';
 import { singleListingAction }                                              from '../actions/houseActions';
-// import * as config                                                          from '../../config';
 
 class GMaps extends React.Component {
   constructor(props){
