@@ -30,7 +30,7 @@ class GMaps extends React.Component {
         lng={ (this.props.listings.length > 0) ? this.props.listings[0].lng : -122.2695097 }
         zoom={ 13 }
         loadingMessage={ 'Loading...' }
-        params={ {v: '3.exp', key: process.env.googleMapKey || config.googleMapKey} }
+        params={ {v: '3.exp', key: 'AIzaSyAMUWIppT-jbjMztrR6tWSV7Y58jTZi2Sw'} }
         onMapCreated={ this.onMapCreated }>
         { (this.props.listings.length > 0) ? this.props.listings.map((house, i) => {
           return (
