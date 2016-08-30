@@ -107,7 +107,7 @@ video {
 }
 .searchbox {
   height: 4vh;
-  width: 200px;
+  width: 16vw;
   font-size: 3vh;
   outline: 0px;
   box-shadow: none;
@@ -246,6 +246,7 @@ video {
   overflow: scroll;
   background-color: #43D1AF;
   text-decoration: none;
+  border-left: 1px solid #333;
 }
 .list:hover {
   text-decoration: none;
@@ -307,6 +308,7 @@ video {
   overflow: scroll;
   background-color: #43D1AF;
   font-size: 3vh;
+  border-left: 1px solid #333;
 }
 .contactHouse {
   font-size: 3vh;
