@@ -17,7 +17,7 @@ export default class singleProfile extends Component {
     return (
       <div>
         <div className='profileContainer'>
-        <div className='listHeading'><b>Profile</b></div>
+          <div className='listHeading'><b>Profile</b></div>
 
           <div className='avatarContainer'>
             <img 

@@ -48,7 +48,9 @@ class ProfileForm extends Component {
         my_lastname,
         my_hometown,
         my_description,
-        my_occupation;
+        my_occupation
+        my_gen_interests,
+        my_tech_interests;
 
     if (avatar.value === ''){
       avatarName = avatar.value;
@@ -63,11 +65,14 @@ class ProfileForm extends Component {
     fetch('/v1/users/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
+        avatarName = ifNotEmptyChangeTo(avatarName, json.avatar);
         my_firstname = ifNotEmptyChangeTo(firstName.value, json.first_name);
         my_lastname = ifNotEmptyChangeTo(lastName.value, json.last_name);
         my_hometown = ifNotEmptyChangeTo(hometown.value, json.hometown);
         my_description = ifNotEmptyChangeTo(description.value, json.description);
         my_occupation = ifNotEmptyChangeTo(occupation.value, json.occupation);
+        my_gen_interests = ifNotEmptyChangeTo(general.value+this.state.general, json.gen_interests);
+        my_tech_interests = ifNotEmptyChangeTo(tech.value+this.state.tech, json.tech_interests)
       })
     .then(() => {     
     fetch('/v1/users/'+userID+'?access_token='+authToken, {
@@ -82,8 +87,8 @@ class ProfileForm extends Component {
         hometown: my_hometown,
         description: my_description,
         occupation: my_occupation,
-        gen_interests: general.value+this.state.general,
-        tech_interests: tech.value+this.state.tech
+        gen_interests: my_gen_interests,
+        tech_interests: my_tech_interests
       })
     }).then(response => {
       hashHistory.push('/profile');

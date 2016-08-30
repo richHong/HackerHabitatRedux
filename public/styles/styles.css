@@ -274,7 +274,8 @@ video {
 }
 .avatar {
   border-radius: 50%;
-  width: 100%;
+  width: 75%;
+  padding-left: 20%;
 }
 .infoContainer {
   width: 100%;
