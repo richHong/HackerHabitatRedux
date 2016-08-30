@@ -4,7 +4,7 @@ export default class SignOut extends Component {
   render() {
     return (
       <div className='signout'>
-        <h1>Thanks for visiting!</h1>
+        <h1 className='title'>Thanks for visiting!</h1>
       </div>
     )
   }

@@ -57,6 +57,7 @@ li {
   float: right;
 }
 li .link{
+  width: 15vw;
   font-size: 3vh;
   color: #43D1AF;
   display: inline-block;
@@ -126,18 +127,14 @@ video {
   text-decoration: none;
   color:#43D1AF;
   font-size: 4vh;
-  margin-top: 5px;
+  margin-top: 1vh;
   padding-left: 1%;
+  float: left;
 }
 .logo:hover {
-  text-decoration: none;
-  color:#43D1AF;
-}
-.logo:visited {
-  text-decoration: none;
-}
-.logo:active {
-  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+  color: white;
 }
 .title {
   color:#43D1AF;

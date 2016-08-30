@@ -62,7 +62,7 @@ render((
       <Route path='/' component={ FrontPage } />
       <Route component={ MainContain }>
           <Route path='/results' component={ Results }/>
-          <Route path="/createProfile" component={ CreateProfile } onEnter={requireAuth}/>
+          <Route path='/createProfile' component={ CreateProfile } onEnter={requireAuth}/>
           <Route path='/signup' component={ SignUp } />
           <Route path='/createHouse' component={ CreateHouse } onEnter={requireAuth}/>
           <Route path='/signin' component={ SignIn } />

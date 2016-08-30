@@ -1,5 +1,5 @@
 import React, { Component }     from 'react';
-import { Link }  								from 'react-router';
+import { Link, hashHistory }  	from 'react-router';
 import SearchBar 								from './search';
 
 let loggedIn = function() {
@@ -7,10 +7,13 @@ let loggedIn = function() {
 };
 
 class NavBar extends Component {
+	goHome(){
+		hashHistory.push('/')
+	}
 	render(){
 		return (
 			<ul className='nav'>
-				<Link className="logo" to="/">Hacker Habitat</Link>
+				<div className="logo" onClick={ () => this.goHome() }>Hacker Habitat</div>
 				<li>
 					<SearchBar />
 				</li>
