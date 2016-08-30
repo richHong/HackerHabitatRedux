@@ -48,7 +48,7 @@ class NavBar extends Component {
 						<Link 
 							to="/createHouse" 
 							className='link'>
-							Create House
+							List House
 						</Link>
 					) : (
 						<div></div>

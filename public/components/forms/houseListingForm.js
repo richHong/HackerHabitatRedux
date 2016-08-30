@@ -141,7 +141,7 @@ class HousingForm extends Component {
   render(){
     return(
           <div className="listingForm">
-            <h1>CREATE A HACKER HOUSE</h1>
+            <h1>LIST A HACKER HOUSE</h1>
           <form>
             <label>House Name:</label><br/>
               <input 
