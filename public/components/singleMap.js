@@ -21,7 +21,7 @@ class SingleGMaps extends Component {
   render(){
     return (
       <Gmaps
-        width={ '60%' }
+        width={ '65%' }
         height={ '100vh' }
         lat={ this.props.listing ? this.props.listing.lat : 37.8780068 }
         lng={ this.props.listing ? this.props.listing.lng : -122.2695097 }

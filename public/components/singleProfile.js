@@ -5,13 +5,15 @@ export default class singleProfile extends Component {
     super(props);
     this.state = {};
   }
-  componentDidMount(){
+  componentWillMount(){
     let authToken = window.localStorage.getItem('token');
     let userID = window.localStorage.getItem('userID');
 
-     fetch('/v1/users/'+userID+'?access_token='+authToken)
-     .then(response => response.json())
-     .then(json => this.setState(json));
+    fetch('/v1/users/'+userID+'?access_token='+authToken)
+    .then(response => response.json())
+    .then(json => {
+      this.setState(json);
+    });
   }
   render() {
     return (

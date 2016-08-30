@@ -23,7 +23,7 @@ class GMaps extends React.Component {
   render(){
     return (
       <Gmaps
-        width={ '60%' }
+        width={ '65%' }
         height={ '100vh' }
         lat={ (this.props.listings.length > 0) ? this.props.listings[0].lat : 37.8780068 }
         lng={ (this.props.listings.length > 0) ? this.props.listings[0].lng : -122.2695097 }

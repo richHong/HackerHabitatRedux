@@ -82,14 +82,14 @@ exports.updateUser = function(req, res, next) {
     description: req.body.description,
     occupation: req.body.occupation,
     gen_interests: req.body.gen_interests,
-    tech_interests: req.body.email,
-    hometown: req.body.email,
-    avatar: req.body.email
+    tech_interests: req.body.tech_interests,
+    hometown: req.body.hometown,
+    avatar: req.body.avatar
   };
 
-  userModel.update({_id:req.body._id}, user, function(err, newUser){
+  userModel.update({ _id: req.params.userId }, user, function(err, newUser){
     if (err){ 
-      console.log(err);
+      console.log('Error in updating. ', err);
     } else {
       res.send('User ' + newUser.username + ' has been updated.');
     } 
@@ -138,7 +138,19 @@ exports.getUserById = function(req, res, next){
   findOne({_id: user_id})
   .then(function(user){
     if (user){
-      res.send(user);
+      var body = {
+        _id: user._id,
+        avatar: user.avatar,
+        description: user.description,
+        first_name: user.first_name,
+        gen_interests: user.gen_interests,
+        hometown: user.hometown,
+        last_name: user.last_name,
+        occupation: user.occupation,
+        tech_interests: user.tech_interests,
+        username: user.username
+      };
+      res.send(body);
     }
   });
 };
