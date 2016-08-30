@@ -37,7 +37,7 @@ class FrontPage extends Component {
             </video>
           </div>
 
-          <div className='destinations' ><h1 className="title">Common Destinations:</h1></div>
+          <div className='destinations' ><h1 className="title">Top Destinations:</h1></div>
           <div className='sanFrancisco' onClick={ () => this.onSubmit('san+francisco') }>San Francisco</div>
           <div className='oakland' onClick={ () => this.onSubmit('oakland') }>Oakland</div>
           <div className='sanJose' onClick={ () => this.onSubmit('san+jose') }>San Jose</div>
