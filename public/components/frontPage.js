@@ -27,7 +27,7 @@ class FrontPage extends Component {
               <p className="frontPageDescription">And if youre looking for roomates, create your profile and put your hacker-house on the map!</p>
             </div>
       
-            <video autoPlay loop className="fillWidth">
+            <video autoPlay loop>
                 <source 
                   src="assets/Home-work/Mp4/Home-work.mp4" 
                   type="video/mp4" />

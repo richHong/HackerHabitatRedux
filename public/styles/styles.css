@@ -332,7 +332,8 @@ video {
   width: 100%;
   background-color: #333;
   color: #43D1AF;
-  border-bottom: 2px solid #333;
+  border: 1px solid #43D1AF;
+  border-left: none;
 }
 .carousel {
   width: 100%;
@@ -414,4 +415,12 @@ video {
   background-color: rgba(67,209,175,0.3);
   cursor: pointer;
   cursor: hand;
+}
+.twitter {
+  float: left;
+  width: 32%;
+  height: 100vh;
+  overflow: scroll;
+  border: 1px solid #333;
+  border-top: none;
 }

@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import HouseListOfListings  from '../houseListOfListings';
 import SingleProfile        from '../singleProfile';
+import TwitterFeed          from '../twitterFeed';
+import _                    from 'underscore';
 
 export default class MyProfile extends Component {
   constructor(){
     super();
-    this.state = {};
+    this.state = {tweets:[]};
   }
   componentWillMount(){
 
@@ -17,6 +19,13 @@ export default class MyProfile extends Component {
     .then(json => {
       this.setState({ favorites: json });
     });
+
+    fetch('/twitter')
+    .then(response => response.json())
+    .then(json => {
+      let tweets = _.uniq(json.statuses, 'text');
+      this.setState({tweets});
+    })
   }
   render() {
     return (
@@ -25,6 +34,7 @@ export default class MyProfile extends Component {
           houses={this.state.favorites} 
           page='profile'/>
         <SingleProfile />
+        <TwitterFeed tweets={this.state.tweets}/>
       </div>
     )
   }
