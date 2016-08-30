@@ -140,6 +140,10 @@ video {
   color:#43D1AF;
   font-size: 4.5vh;
 }
+.bigTitle {
+  color:#43D1AF;
+  font-size: 8vh;
+}
 .filter {
   z-index: 100;
   position: absolute;
