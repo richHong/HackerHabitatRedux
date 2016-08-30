@@ -359,9 +359,9 @@ video {
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
-  width: 30%;
+  width: 25%;
   margin: 2rem;
-  left: 65vw;
+  left: 70vw;
   top: 20vh;
   font-size: 4vh;
 }
@@ -374,7 +374,7 @@ video {
   padding: 2rem;
   width: 25%;
   margin: 2rem;
-  left: 65vw;
+  left: 70vw;
   top: 35vh;
   font-size: 4vh;
 }
@@ -387,7 +387,7 @@ video {
   padding: 2rem;
   width: 25%;
   margin: 2rem;
-  left: 65vw;
+  left: 70vw;
   top: 50vh;
   font-size: 4vh;
 }
@@ -400,7 +400,7 @@ video {
   padding: 2rem;
   width: 25%;
   margin: 2rem;
-  left: 65vw;
+  left: 70vw;
   top: 65vh;
   font-size: 4vh;
 }
