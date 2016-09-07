@@ -7,7 +7,7 @@ import { Router, Route, hashHistory, browserHistory, Link }                 from
 class SearchBar extends Component {
 	onSubmit(e){
     e.preventDefault();
-		var searchable = this.search.value.replace(" ", "+").toLowerCase();
+		var searchable = this.search.value.toLowerCase();
     
 		fetch('/v1/listings/city/:'+searchable)
     	.then(response => response.json())

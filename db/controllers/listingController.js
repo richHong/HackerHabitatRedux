@@ -55,13 +55,13 @@ exports.createListing = function(req, res, next) {
 };
 
 exports.getListingsById = function(req, res, next) {
-  var user_id = req.params.userID;
+  var user_id = req.params.userId;
   var find = Q.nbind(listingModel.find, listingModel);
-
+  
   find({user_id: user_id})
-    .then(function(houses) {
-      res.send(houses);
-    });
+  .then(function(houses) {
+    res.send(houses);
+  });
 
 };
 
@@ -70,9 +70,9 @@ exports.getListingsByCity = function(req, res, next) {
   var find = Q.nbind(listingModel.find, listingModel);
 
   find({city: city})
-    .then(function(houses) {
-      res.send(houses);
-    });
+  .then(function(houses) {
+    res.send(houses);
+  });
 };
 
 exports.getListingsByName = function(req, res, next) {
@@ -80,7 +80,7 @@ exports.getListingsByName = function(req, res, next) {
   var findOne = Q.nbind(listingModel.findOne, listingModel);
 
   findOne({house_name: house_name})
-    .then(function(house) {
-      res.send(house);
-    });
+  .then(function(house) {
+    res.send(house);
+  });
 }

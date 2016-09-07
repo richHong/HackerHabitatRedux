@@ -9,7 +9,6 @@ class MyCarousel extends Component {
   }
   componentWillMount(){
     let images = [];
-
     if (this.props.listing){
       if(this.props.listing.pic1){
         images.push(this.props.listing.pic1);
@@ -28,12 +27,15 @@ class MyCarousel extends Component {
       }
       this.setState({images});
     } 
-
+  }
+  componentDidMount(){
+    let images = [];
     if (this.state.images.length === 0){
         images.push('http://assets.inhabitat.com/files/2010/01/interloop-stock.jpg');
         images.push('http://i.istockimg.com/file_thumbview_approve/88947009/6/stock-photo-88947009-swimming-pool-mit-apartment-houses-in-the-background.jpg');
-        this.setState({images})
+        this.setState({images});
     }
+
   }
   render() {
     return (
