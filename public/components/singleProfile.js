@@ -23,7 +23,8 @@ export default class singleProfile extends Component {
 
           <div className='avatarContainer'>
             <img 
-              className='avatar' 
+              className='avatar'
+              style={{'border':'1px solid black'}} 
               src={ this.state.avatar || 'https://cdn4.iconfinder.com/data/icons/linecon/512/photo-512.png' } />
           </div>
 
