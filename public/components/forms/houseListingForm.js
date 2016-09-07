@@ -2,15 +2,6 @@ import React, { Component }                           from 'react';
 import { Router, Route, hashHistory, browserHistory } from 'react-router';
 import Axios                                          from 'axios';
 
-function formatDate (date){
-  var dateArray = date.split('-');
-  var temp = dateArray[0];
-  dateArray[0] = dateArray[1];
-  dateArray[1] = dateArray[2];
-  dateArray[2] = temp;
-  return dateArray.join('-');
-};
-
 class HousingForm extends Component {
   constructor(props){
     super(props);
@@ -23,6 +14,14 @@ class HousingForm extends Component {
     this.addInterest = this.addInterest.bind(this);
     this.addAmenity = this.addAmenity.bind(this);
     this.submit = this.submit.bind(this);
+  }
+  formatDate (date) {
+    let dateArray = date.split('-');
+    let temp = dateArray[0];
+    dateArray[0] = dateArray[1];
+    dateArray[1] = dateArray[2];
+    dateArray[2] = temp;
+    return dateArray.join('-');
   }
   addAmenity (value){
     if (this.state.houseAmenities.includes(value)){
@@ -118,7 +117,7 @@ class HousingForm extends Component {
             state: state.value,
             zipcode: zipCode.value,
             price: price.value,
-            dates_avail: formatDate(dateStart.value)+' to '+formateDate(dateEnd.value),
+            dates_avail: this.formatDate(dateStart.value) +' to '+ this.formateDate(dateEnd.value),
             house_interests: interests.value+this.state.houseInterests,
             house_mission: mission.value,
             house_rules: rules.value,
