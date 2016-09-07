@@ -70,8 +70,7 @@ class HousingForm extends Component {
       pic2Name = 'https://s3-us-west-1.amazonaws.com/hhlistings/'+pic2.value.slice(12);
       var form = document.getElementById('pic2Form');
       var fdata = new FormData(form);
-      Axios.post('/v1/lp', fdata)
-      .then(response => console.log(response));
+      Axios.post('/v1/lp', fdata);
     }
 
     if (pic3.value === ''){

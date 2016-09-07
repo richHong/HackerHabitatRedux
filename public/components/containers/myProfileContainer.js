@@ -20,7 +20,6 @@ export default class MyProfile extends Component {
     fetch('/v1/listings/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
-      console.log(json);
       this.setState({ favorites: json });
     });
 

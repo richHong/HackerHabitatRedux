@@ -70,8 +70,7 @@ class ProfileForm extends Component {
       avatarName = 'https://s3-us-west-1.amazonaws.com/hhavatars/'+avatar.value.slice(12);
       var form = document.getElementById('avatarForm');
       var fdata = new FormData(form);
-      Axios.post('/v1/ap', fdata)
-      .then(response => console.log(response));
+      Axios.post('/v1/ap', fdata);
     }
 
     fetch('/v1/users/'+userID+'?access_token='+authToken, {

@@ -1,13 +1,17 @@
 var fs = require('fs');
 var S3FS = require('s3fs');
+var isProduction = process.env.NODE_ENV === 'production';
+if (!isProduction){
+  var config = require('../config.js');
+}
 
 module.exports = function (app) {
 
   var s3fsImplementation2 = new S3FS('hhlistings', {
-    accessKeyId: process.env.accessKeyId,
-    secretAccessKey: process.env.secretAccessKey,
-    endpoint: process.env.endpoint,
-    region: process.env.region
+    accessKeyId: process.env.accessKeyId || config.accessKeyId,
+    secretAccessKey: process.env.secretAccessKey || config.secretAccessKey,
+    endpoint: process.env.endpoint || config.endpoint,
+    region: process.env.region || config.region
   });
 
   app.post('/v1/lp', function(req, res) {
