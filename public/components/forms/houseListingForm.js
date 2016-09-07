@@ -54,8 +54,8 @@ class HousingForm extends Component {
         pic4Name,
         pic5Name;
 
-    let dateStart = this.formatDate(dateStart.value),
-        dateEnd   = this.formateDate(dateEnd.value);
+    let startDate = this.formatDate(dateStart.value),
+        endDate   = this.formateDate(dateEnd.value);
 
     if (pic1.value === ''){
       pic1Name = pic1.value;
@@ -120,7 +120,7 @@ class HousingForm extends Component {
             state: state.value,
             zipcode: zipCode.value,
             price: price.value,
-            dates_avail:  dateStart + ' to ' + dateEnd,
+            dates_avail: startDate + ' to ' + endDate,
             house_interests: interests.value+this.state.houseInterests,
             house_mission: mission.value,
             house_rules: rules.value,
