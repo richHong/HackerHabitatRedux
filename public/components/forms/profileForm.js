@@ -40,13 +40,13 @@ class ProfileForm extends Component {
     fetch('/v1/users/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
-      document.getElementById('firstName').value   = json.first_name;
-      document.getElementById('lastName').value    = json.last_name;
-      document.getElementById('hometown').value    = json.hometown;
-      document.getElementById('description').value = json.description;
-      document.getElementById('occupation').value  = json.occupation;
-      document.getElementById('general').value     = json.gen_interests;
-      document.getElementById('tech').value        = json.tech_interests;
+      document.getElementById('firstName').value   = json.first_name || '';
+      document.getElementById('lastName').value    = json.last_name || '';
+      document.getElementById('hometown').value    = json.hometown || '';
+      document.getElementById('description').value = json.description || '';
+      document.getElementById('occupation').value  = json.occupation || '';
+      document.getElementById('general').value     = json.gen_interests || '';
+      document.getElementById('tech').value        = json.tech_interests || '';
     });
   }
   submit(e, avatar, firstName, lastName, description, hometown, occupation, general, tech){
