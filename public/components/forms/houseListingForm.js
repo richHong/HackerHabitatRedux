@@ -55,7 +55,7 @@ class HousingForm extends Component {
         pic5Name;
 
     let startDate = this.formatDate(dateStart.value),
-        endDate   = this.formateDate(dateEnd.value);
+        endDate   = this.formatDate(dateEnd.value);
 
     if (pic1.value === ''){
       pic1Name = pic1.value;
