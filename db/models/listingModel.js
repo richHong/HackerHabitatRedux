@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var ListingSchema = new mongoose.Schema({
     email: String,
-    user_id: Number,
+    user_id: String,
     house_name: {
         type: String,
         required: true,

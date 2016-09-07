@@ -46,6 +46,7 @@ class HousingForm extends Component {
     e.preventDefault();
 
     let geolocation,
+        userID    = window.localStorage.getItem('userID'),
         authToken = window.localStorage.getItem('token');
 
     let pic1Name,
@@ -110,6 +111,7 @@ class HousingForm extends Component {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
+            user_id: userID,
             house_name: name.value,
             heading: heading.value,
             street_add: street.value,

@@ -35,12 +35,11 @@ class ProfileForm extends Component {
   }
   componentWillMount(){
     let authToken = window.localStorage.getItem('token'),
-    userID = window.localStorage.getItem('userID');
+        userID    = window.localStorage.getItem('userID');
 
     fetch('/v1/users/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
-      console.log()
       document.getElementById('firstName').value   = json.first_name;
       document.getElementById('lastName').value    = json.last_name;
       document.getElementById('hometown').value    = json.hometown;
@@ -54,7 +53,7 @@ class ProfileForm extends Component {
     e.preventDefault();
     
     let authToken = window.localStorage.getItem('token'),
-        userID = window.localStorage.getItem('userID');
+        userID    = window.localStorage.getItem('userID');
 
     let avatarName,
         my_firstname,

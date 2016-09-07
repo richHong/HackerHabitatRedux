@@ -7,7 +7,10 @@ import _                    from 'underscore';
 export default class MyProfile extends Component {
   constructor(){
     super();
-    this.state = {tweets:[]};
+    this.state = {
+      tweets:[],
+      favorites:[]
+    };
   }
   componentWillMount(){
 
@@ -17,6 +20,7 @@ export default class MyProfile extends Component {
     fetch('/v1/listings/'+userID+'?access_token='+authToken)
     .then(response => response.json())
     .then(json => {
+      console.log(json);
       this.setState({ favorites: json });
     });
 
@@ -24,17 +28,17 @@ export default class MyProfile extends Component {
     .then(response => response.json())
     .then(json => {
       let tweets = _.uniq(json.statuses, 'text');
-      this.setState({tweets});
-    })
+      this.setState({ tweets });
+    });
   }
   render() {
     return (
       <div>
         <HouseListOfListings 
-          houses={this.state.favorites} 
+          houses={ this.state.favorites } 
           page='profile'/>
         <SingleProfile />
-        <TwitterFeed tweets={this.state.tweets}/>
+        <TwitterFeed tweets={ this.state.tweets }/>
       </div>
     )
   }

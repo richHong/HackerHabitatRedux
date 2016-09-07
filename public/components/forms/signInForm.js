@@ -29,7 +29,6 @@ class SignInForm extends Component {
       if (successLogIn){
           window.localStorage.setItem('userID', data.user_id);
           window.localStorage.setItem('token', data.token);
-          window.localStorage.setItem('i', data.id);
           window.location = '#/';
       }
     });

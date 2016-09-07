@@ -40,12 +40,9 @@ var requireAuth = function(nextState, replace) {
 };
 
 var logout = function(nextState, replace) {
-    let authToken = window.localStorage.getItem('token');
-    let id = window.localStorage.getItem('i');
 
     if (!!localStorage.token) {
         delete localStorage.token;
-        delete localStorage.i;
         delete localStorage.userID;
         replace({
             pathname: '/signout',

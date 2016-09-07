@@ -8,27 +8,27 @@ class SignUpForm extends Component {
 				Username: 
 				<input 
 					type='text'
-					ref={(username) => this.username = username} />
+					ref={ username  => this.username = username } />
 				<br />
 				Password: 
 				<input 
 					type='password' 
 					pattern=".{5,}" 
-					ref={(password) => this.password = password} />
+					ref={ password  => this.password = password } />
 				<br />
 				Confirm Password: 
 				<input 
 					type='password' 
-					ref={(confirmPassword) => this.confirmPassword = confirmPassword} />
+					ref={ confirmPassword => this.confirmPassword = confirmPassword } />
 				<br />
 				Email:
 				<input 
 					type="email" 
-					ref={(email) => this.email = email} />
+					ref={ email => this.email = email} />
 				<br />
 				<input 
 					type='submit' 
-					onClick={this.submitForm.bind(this)} 
+					onClick={ this.submitForm.bind(this) } 
 					to="/createProfile" 
 					value='Join'/>
 			</form>
@@ -57,10 +57,8 @@ class SignUpForm extends Component {
                 })
                 .then(response => response.json())
                 .then(data => {
-                	console.log('This data', data)
                   window.localStorage.setItem('token', data.token);
                   window.localStorage.setItem('userID', data.user_id);
-                  window.localStorage.setItem('i', data.id);
 									window.location = '#/createProfile';
             });
 	            } else {
