@@ -57,7 +57,7 @@ class HousingForm extends Component {
     if (pic1.value === ''){
       pic1Name = pic1.value;
     } else {
-      pic1Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic1.value.slice(12);
+      pic1Name = 'https://s3-us-west-1.amazonaws.com/hhlistings/'+pic1.value.slice(12);
       var form = document.getElementById('pic1Form');
       var fdata = new FormData(form);
       Axios.post('/v1/lp', fdata);
@@ -66,7 +66,7 @@ class HousingForm extends Component {
     if (pic2.value === ''){
       pic2Name = pic2.value;
     } else {
-      pic2Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic2.value.slice(12);
+      pic2Name = 'https://s3-us-west-1.amazonaws.com/hhlistings/'+pic2.value.slice(12);
       var form = document.getElementById('pic2Form');
       var fdata = new FormData(form);
       Axios.post('/v1/lp', fdata)
@@ -76,7 +76,7 @@ class HousingForm extends Component {
     if (pic3.value === ''){
       pic3Name = pic3.value;
     } else {
-      pic3Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic3.value.slice(12);
+      pic3Name = 'https://s3-us-west-1.amazonaws.com/hhlistings/'+pic3.value.slice(12);
       var form = document.getElementById('pic3Form');
       var fdata = new FormData(form);
       Axios.post('/v1/lp', fdata);
@@ -85,7 +85,7 @@ class HousingForm extends Component {
     if (pic4.value === ''){
       pic4Name = pic4.value;
     } else {
-      pic4Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic4.value.slice(12);
+      pic4Name = 'https://s3-us-west-1.amazonaws.com/hhlistings/'+pic4.value.slice(12);
       var form = document.getElementById('pic4Form');
       var fdata = new FormData(form);
       Axios.post('/v1/lp', fdata);
@@ -94,7 +94,7 @@ class HousingForm extends Component {
     if (pic5.value === ''){
       pic5Name = pic5.value;
     } else {
-      pic5Name = 'https://s3-us-west-1.amazonaws.com/hackerhabitatlistings/'+pic5.value.slice(12);
+      pic5Name = 'https://s3-us-west-1.amazonaws.com/hhlistings/'+pic5.value.slice(12);
       var form = document.getElementById('pic5Form');
       var fdata = new FormData(form);
       Axios.post('/v1/lp', fdata);

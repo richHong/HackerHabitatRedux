@@ -68,7 +68,7 @@ class ProfileForm extends Component {
     if (avatar.value === ''){
       avatarName = avatar.value;
     } else {
-      avatarName = 'https://s3-us-west-1.amazonaws.com/hackerhabitatavatars/'+avatar.value.slice(12);
+      avatarName = 'https://s3-us-west-1.amazonaws.com/hhavatars/'+avatar.value.slice(12);
       var form = document.getElementById('avatarForm');
       var fdata = new FormData(form);
       Axios.post('/v1/ap', fdata)

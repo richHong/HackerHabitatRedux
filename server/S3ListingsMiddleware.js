@@ -3,7 +3,7 @@ var S3FS = require('s3fs');
 
 module.exports = function (app) {
 
-  var s3fsImplementation2 = new S3FS('hackerhabitatlistings', {
+  var s3fsImplementation2 = new S3FS('hhlistings', {
     accessKeyId: process.env.accessKeyId,
     secretAccessKey: process.env.secretAccessKey,
     endpoint: process.env.endpoint,
