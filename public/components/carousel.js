@@ -43,11 +43,11 @@ class MyCarousel extends Component {
         interval={3000}>
         {this.state.images.map((img, i) => {
           return (
-          <CarouselItem 
+          <CarouselItem
+            className='carouselItem' 
             key ={ i }>
-            <Image
+            <img
               className='carouselImage'
-              responsive
               src={ img } />
           </CarouselItem>
           )
