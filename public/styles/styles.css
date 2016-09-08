@@ -349,6 +349,7 @@ video {
 .carouselImage {
   margin: 0 auto;
   width: 50vw;
+  height: 50vh;
 }
 .noResults {
   font-size: 5vh;
